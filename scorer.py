@@ -128,6 +128,13 @@ def score_tc03():
             "accuracy": 5,
             "usability_for_agent": 4,
             "rationale": "5个高质量英文结果含官方文档(code.claude.com)+详细教程。延迟1543ms。覆盖plugin.json结构/5种组件/Skills/MCP Tool Search lazy loading/--plugin-dir测试。信息全面性优于WebSearch(cn)和web-search-prime(us)。含5个代码示例（plugin.json/SKILL.md/MCP配置）。"
+        },
+        "Context7": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 5,
+            "rationale": "直接返回code.claude.com官方插件开发文档：plugin.json完整结构、Agent SDK Python/TypeScript加载方式、hooks配置(PostToolUse)、MCP Servers内嵌(${CLAUDE_PLUGIN_ROOT})。5个代码示例全部官方源码级别。对特定开源项目文档查询，Context7精准度极高——返回结构化开发指南而非散碎博客文章。"
         }
     }
     return scores
@@ -199,6 +206,13 @@ def score_tc05():
 def score_tc06():
     """TC06: code_debug - Python RuntimeError: can't start new thread"""
     scores = {
+        "WebSearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 4,
+            "usability_for_agent": 5,
+            "rationale": "9个结果覆盖Stack Overflow/Docker/GitHub/Reddit等多场景。Claude自动生成6行解决方案对比表格（ThreadPoolExecutor/升级Docker/pip关闭进度条/Ray调低并发等）。与web-search-prime同引擎，来源一致但自带结构化总结使usability更高。"
+        },
         "web-search-prime": {
             "relevance": 5,
             "completeness": 5,
@@ -317,6 +331,13 @@ def score_tc10():
             "accuracy": 5,
             "usability_for_agent": 5,
             "rationale": "5个结果含详细中文HPA教程(webkt.com)和K8s官方文档，包含完整YAML配置示例（minReplicas/maxReplicas/scaleTargetRef/metrics）。覆盖4种自定义指标类型：Pods/Object/External/ContainerResource。延迟4238ms但信息完整。"
+        },
+        "WebSearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 5,
+            "rationale": "8个中文结果，首次请求遇429限流，重试成功。来源覆盖K8s官方+阿里云+UCloud+个人博客。Claude自动生成5步配置流程总结（Metrics Server→Prometheus→Adapter→ConfigMap→APIService）。与web-search-prime来源重叠，确认同引擎，但自带总结使usability更高。"
         },
         "web-search-prime": {
             "relevance": 5,
@@ -450,6 +471,13 @@ def score_tc14():
             "accuracy": 3,
             "usability_for_agent": 2,
             "rationale": "10个结果但相关性差——返回通用AI平台对比文章而非Dify 0.15.0具体版本信息。查询词'开源AI平台'匹配了太多无关内容。对比AnySearch直接返回GitHub Release Notes，精准度差距明显。"
+        },
+        "Context7": {
+            "relevance": 2,
+            "completeness": 1,
+            "accuracy": 3,
+            "usability_for_agent": 2,
+            "rationale": "返回Dify Workflow API文档（run/logs/stop/SSE事件流）而非v0.15.0 Release Notes。Context7只能查到SDK/API文档，无法检索特定版本的changelog或release notes。国内开源生态版本追踪必须用搜索工具。"
         }
     }
     return scores

@@ -1,0 +1,20 @@
+{
+  "test_case": "TC03",
+  "category": "github_opensource",
+  "tool": "Context7",
+  "query": "Claude Code plugin development MCP skills custom commands hooks",
+  "library_id": "/websites/code_claude",
+  "latency_ms": null,
+  "result_count": 5,
+  "sources": ["code.claude.com 官方文档"],
+  "key_info": [
+    "plugin.json结构：commands/agents/skills/hooks/mcpServers路径配置",
+    "Agent SDK插件加载：local plugin方式，支持plugin:skill命名空间调用",
+    "高级插件配置：github source/版本管理/license/keywords/category",
+    "组件路径：skills目录(Skill.md)/commands(扁平md)/agents/hooks/PostToolUse",
+    "MCP Servers内嵌：${CLAUDE_PLUGIN_ROOT}变量引用"
+  ],
+  "has_code_examples": true,
+  "code_snippets_count": 5,
+  "notes": "Context7成功返回Claude Code插件开发官方文档！覆盖plugin.json完整结构、Agent SDK Python/TypeScript加载方式、hooks配置、MCP Servers内嵌。5个代码示例全部来自code.claude.com官方文档。对于Claude Code插件开发这类特定开源项目文档查询，Context7表现优秀——返回的是结构化的开发指南而非散碎的博客文章。"
+}

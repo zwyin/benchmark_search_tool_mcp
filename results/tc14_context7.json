@@ -1,0 +1,20 @@
+{
+  "test_case": "TC14",
+  "category": "domestic_ecosystem",
+  "tool": "Context7",
+  "query": "Dify v0.15 release new features changelog parent-child retrieval workflow iteration",
+  "library_id": "/langgenius/dify",
+  "latency_ms": null,
+  "result_count": 5,
+  "sources": ["GitHub langgenius/dify", "context7.com Dify API"],
+  "key_info": [
+    "Workflow Run API：执行工作流并获取结果",
+    "Workflow Logs API：日志查询含分页/状态过滤",
+    "WorkflowClient Node.js实现：blocking/streaming两种模式",
+    "工作流SSE事件流：workflow_started/node_started/node_finished/workflow_finished",
+    "未返回v0.15.0版本Release Notes"
+  ],
+  "has_code_examples": true,
+  "code_snippets_count": 4,
+  "notes": "Context7返回Dify Workflow API文档而非v0.15 Release Notes。覆盖的是工作流执行API（run/logs/stop）而非版本新功能。Context7只能查到SDK/API文档，无法检索特定版本的changelog或release notes。国内开源生态版本追踪必须用搜索工具（AnySearch/WebSearch）。"
+}

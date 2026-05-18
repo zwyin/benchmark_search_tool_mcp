@@ -1,0 +1,20 @@
+{
+  "test_case": "TC06",
+  "category": "code_debug",
+  "tool": "WebSearch",
+  "query": "Python RuntimeError: can't start new thread troubleshooting solutions",
+  "latency_ms": null,
+  "result_count": 9,
+  "sources": ["Stack Overflow", "Docker Forums", "GitHub boto3", "Reddit r/Python", "YouTube", "Ray Discuss", "GitHub pip", "John's Blog", "MongoDB Forums"],
+  "key_info": [
+    "核心原因：线程数超过系统限制（~1000线程）",
+    "解决方案1：ThreadPoolExecutor限制max_workers",
+    "解决方案2：升级Docker版本（20.10.10+）",
+    "解决方案3：pip安装时关闭进度条",
+    "解决方案4：Ray/boto3框架调低并发配置",
+    "Claude自动生成6行解决方案对比表格"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "WebSearch返回9个高质量结果，来源覆盖Stack Overflow/Docker/GitHub/Reddit。Claude自动生成结构化解决方案对比表格（Limit thread count/Use thread pools/Upgrade environment/Check system limits/Reuse threads/Reduce concurrency）。中文社区+英文官方混合覆盖。"
+}

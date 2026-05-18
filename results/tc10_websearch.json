@@ -1,0 +1,20 @@
+{
+  "test_case": "TC10",
+  "category": "multilingual_query",
+  "tool": "WebSearch",
+  "query": "Kubernetes HPA custom metrics autoscaling 配置教程",
+  "latency_ms": null,
+  "result_count": 8,
+  "sources": ["Kubernetes官方文档", "Jimmy Song", "AtBug Blog", "liangyuanpeng.com", "阿里云", "UCloud", "Dozer技术站", "YouTube"],
+  "key_info": [
+    "HPA演练教程（Kubernetes官方中文文档）",
+    "基于Prometheus自定义指标的可控弹性伸缩",
+    "定制指标实现CPU和内存扩展（含Prometheus Adapter部署）",
+    "阿里云ACK基于Prometheus指标的容器水平伸缩",
+    "5步配置流程：Metrics Server→Prometheus→Adapter→ConfigMap→APIService",
+    "Claude自动生成关键配置步骤总结"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "WebSearch返回8个高质量中文结果，首次请求遇到429限流，重试成功。来源覆盖K8s官方+阿里云+UCloud+个人博客。Claude自动生成5步配置流程总结。与web-search-prime来源高度重叠（K8s官方/Jimmy Song/阿里云），确认同引擎。"
+}
