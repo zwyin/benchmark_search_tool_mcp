@@ -1,0 +1,20 @@
+{
+  "test_case": "TC09",
+  "category": "english_tech",
+  "tool": "WebSearch",
+  "query": "Rust async runtime tokio vs async-std comparison 2025",
+  "latency_ms": null,
+  "result_count": 8,
+  "sources": ["generalistprogrammer.com", "corrode.dev", "Reddit r/rust", "WyeWorks Blog", "Medium", "GitHub async-rs/async-std", "LinkedIn", "YouTube"],
+  "key_info": [
+    "Tokio是Rust异步运行时的事实标准，生态最广泛",
+    "async-std更接近std库API风格，学习曲线更平缓",
+    "Tokio额外模块覆盖fs/networking等，async-std聚焦最小化修改std",
+    "GitHub issue #992中async-std开发者承认tokio更流行且维护良好",
+    "生产服务/Web服务器/gRPC场景推荐Tokio",
+    "WebSearch自带对比表格(Popularity/Ecosystem/API Style/Performance/Maintenance)"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "WebSearch(location=us)返回8个高质量英文结果，来源覆盖技术博客/Reddit/GitHub/LinkedIn/YouTube。Claude自动生成结构化对比表格，Agent可直接使用。对比AnySearch的中文博客结果，WebSearch在英文技术搜索中表现更优（官方英文社区覆盖更全）。但两者信息量相当，WebSearch的Claude总结使usability更高。"
+}

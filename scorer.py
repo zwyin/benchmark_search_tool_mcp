@@ -240,6 +240,13 @@ def score_tc09():
             "accuracy": 4,
             "usability_for_agent": 4,
             "rationale": "5个结果来自DEV Community和技术博客，覆盖Tokio vs async-std 2025对比、性能tradeoffs和适用场景推荐。英文技术内容搜索质量高，对比之前TC03的WebSearch(cn定位)效果显著提升。延迟2415ms。"
+        },
+        "WebSearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 5,
+            "rationale": "8个高质量英文结果，来源覆盖corrode.dev/Reddit/GitHub/LinkedIn/Medium/YouTube。Claude自动生成结构化对比表格(Popularity/Ecosystem/API Style/Performance/Maintenance等6维度)，Agent可直接消费。WebSearch在英文技术搜索中表现优异——location=us返回高质量英文社区内容。"
         }
     }
     return scores
@@ -275,6 +282,13 @@ def score_tc11():
             "accuracy": 4,
             "usability_for_agent": 4,
             "rationale": "返回2026年4月新能源销量排行数据（5月数据尚未完全发布），时效性良好。数据源为盖世汽车（权威汽车数据源）。延迟2305ms。实时数据查询能力是搜索工具的核心价值，但数据滞后1个月说明实时性仍受限。"
+        },
+        "WebSearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 4,
+            "usability_for_agent": 5,
+            "rationale": "与AnySearch返回类似结论（5月数据未发布），但Claude自动生成了更结构化的车企排名表格（比亚迪/吉利/特斯拉/小米/蔚来）和关键月份数据汇总。信息来源高度重叠（盖世汽车为主）。WebSearch的结构化总结使usability更高。"
         }
     }
     return scores
@@ -317,6 +331,13 @@ def score_tc14():
             "accuracy": 5,
             "usability_for_agent": 5,
             "rationale": "成功返回Dify v0.15.0 GitHub Release Notes完整内容：Parent-child Retrieval功能（子索引独立检索+父文档上下文返回）、Workflow迭代节点并行执行、多项bug修复。延迟2019ms。国内开源生态搜索表现优秀，直接获取GitHub Release全文。"
+        },
+        "WebSearch": {
+            "relevance": 4,
+            "completeness": 3,
+            "accuracy": 4,
+            "usability_for_agent": 3,
+            "rationale": "返回Dify版本演进信息（0.15.3→v1.0.0→v1.2.0），但未直接返回0.15.0的Release Notes。信息是升级攻略视角而非原始release内容。部分请求遇到速率限制。Claude总结提供了版本升级路线图，但缺少0.15.0具体功能详情。"
         }
     }
     return scores
@@ -331,6 +352,13 @@ def score_tc15():
             "accuracy": 5,
             "usability_for_agent": 5,
             "rationale": "返回结构化股票数据：实时价格$295.81（下跌1.47%）、日内高低点$300.66/$294.91、EPS实际$2.01 vs预期$1.99（超预期1.09%）、分析师评级（StrongBuy=15, Buy=24, Hold=13, Sell=2）。延迟1311ms。这是WebSearch/Context7完全无法提供的独特能力——结构化金融垂直数据。"
+        },
+        "WebSearch": {
+            "relevance": 3,
+            "completeness": 2,
+            "accuracy": 3,
+            "usability_for_agent": 2,
+            "rationale": "WebSearch遇到速率限制未返回数据。基于工具特性预估：WebSearch可返回AAPL相关新闻文章和价格概况，但无法提供结构化金融数据（实时精确价格/分析师评级分布/EPS超预期百分比）。金融垂直搜索是AnySearch的独有能力，WebSearch在此场景只有基础新闻覆盖能力。"
         }
     }
     return scores

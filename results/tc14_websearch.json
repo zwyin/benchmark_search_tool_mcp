@@ -1,0 +1,19 @@
+{
+  "test_case": "TC14",
+  "category": "domestic_ecosystem",
+  "tool": "WebSearch",
+  "query": "Dify 0.15 新功能 开源AI应用开发平台",
+  "latency_ms": null,
+  "result_count": 5,
+  "sources": ["53AI", "知乎", "火山引擎", "Dify官方文档"],
+  "key_info": [
+    "Dify 0.15.3是0.15.x系列最终版本，后跳升至v1.0.0",
+    "v1.0.0+重大变化：插件机制革新、Agent节点、插件市场",
+    "v1.2.0新增循环节点、知识库元数据管理优化",
+    "0.15.3到1.x是重大升级，需注意数据库迁移和配置检查",
+    "社区版与Cloud版同步更新"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "WebSearch返回Dify版本演进信息（0.15.3→v1.0.0→v1.2.0），但未直接返回0.15.0的Release Notes详情。部分请求遇到速率限制。对比AnySearch直接返回GitHub Release Notes全文，WebSearch的信息精度略低（返回升级攻略而非原始release内容）。但Claude总结提供了版本升级路线图视角。"
+}

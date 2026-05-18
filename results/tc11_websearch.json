@@ -1,0 +1,20 @@
+{
+  "test_case": "TC11",
+  "category": "realtime_data",
+  "tool": "WebSearch",
+  "query": "2026年5月中国新能源汽车销量排行榜",
+  "latency_ms": null,
+  "result_count": 8,
+  "sources": ["盖世汽车 (auto.gasgoo.com)", "易车 (yiche.com)", "网通社汽车"],
+  "key_info": [
+    "2026年5月数据尚未发布（预计6月10-15日公布）",
+    "2026年4月数据：比亚迪稳居第一，吉利约12.7万辆，特斯拉Model Y约22,990辆",
+    "小米汽车市占率从1%翻倍至3%，SU7约26,826辆",
+    "蔚来ES8以13,020辆蝉联40万元级别榜首",
+    "3月全国新能源批发预估约112万辆，同比增长持平",
+    "深蓝S05 EV占比超95%"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "WebSearch与AnySearch返回类似结论（5月数据未发布，4月数据可用）。但WebSearch通过Claude总结提供了更结构化的车企排名表格和关键月份数据汇总。两者信息来源高度重叠（盖世汽车为主）。WebSearch额外提供了购车建议链接。usability_for_agent维度WebSearch略优（结构化总结）。"
+}
