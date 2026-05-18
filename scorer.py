@@ -212,6 +212,13 @@ def score_tc07():
             "accuracy": 5,
             "usability_for_agent": 5,
             "rationale": "返回完整技术规格文档(~30K字符)：7450亿总参数/440亿激活参数/MoE架构256专家激活8个/DeepSeek稀疏注意力(DSA)/200K上下文/华为昇腾+MindSpore训练。含API接入方式(Z.ai/WaveSpeed)和开源计划(MIT许可/HuggingFace/ModelScope)。信息深度和完整性最高。耗时1680ms。"
+        },
+        "Context7": {
+            "relevance": 2,
+            "completeness": 1,
+            "accuracy": 3,
+            "usability_for_agent": 2,
+            "rationale": "只返回ZhipuAI SDK的GLM-4 API调用示例（chat.completions/glm-4v/charglm-3），完全未覆盖GLM-5模型能力。Context7只能查到SDK文档，无法获取模型本身的最新特性和技术规格。国内技术动态查询必须用搜索工具。"
         }
     }
     return scores

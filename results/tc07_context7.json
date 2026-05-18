@@ -1,0 +1,19 @@
+{
+  "test_case": "TC07",
+  "category": "domestic_tech",
+  "tool": "Context7",
+  "query": "GLM-5 model capabilities features API usage",
+  "library_id": "/metaglm/zhipuai-sdk-python-v4",
+  "latency_ms": null,
+  "result_count": 4,
+  "sources": ["ZhipuAI SDK 官方仓库 (metaglm/zhipuai-sdk-python-v4)"],
+  "key_info": [
+    "GLM-4基础chat.completions调用示例",
+    "GLM-4V多模态图像分析示例",
+    "charglm-3角色扮演示例",
+    "web_search工具集成示例"
+  ],
+  "has_code_examples": true,
+  "code_snippets_count": 4,
+  "notes": "Context7只返回ZhipuAI SDK的GLM-4 API调用示例，完全未覆盖GLM-5模型能力（7450亿参数/MoE架构/8小时自主工作等）。这证实Context7的覆盖局限：只能查到有文档的开源SDK，查不到模型本身的最新能力和特性。国内技术动态查询必须用搜索工具（WebSearch/AnySearch）。"
+}
