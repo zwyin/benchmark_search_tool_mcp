@@ -1,0 +1,19 @@
+{
+  "test_case": "TC09",
+  "category": "english_tech",
+  "tool": "Context7",
+  "query": "tokio runtime features comparison with async-std, when to use tokio",
+  "library_id": "/websites/rs_tokio",
+  "latency_ms": null,
+  "result_count": 4,
+  "sources": ["docs.rs/tokio (官方文档)"],
+  "key_info": [
+    "#[tokio::main]宏自动设置多线程运行时",
+    "Runtime::new()手动创建运行时，支持自定义配置",
+    "current_thread flavor用于单线程场景",
+    "spawn_blocking用于在异步上下文中执行阻塞操作"
+  ],
+  "has_code_examples": true,
+  "code_snippets_count": 4,
+  "notes": "Context7返回Tokio官方文档的运行时代码示例，但无tokio vs async-std对比分析。Context7只提供库的API文档，不提供竞品对比或选型建议。这进一步证实Context7定位：查API用法精准，但不适合做技术选型对比。技术选型对比场景应使用WebSearch或AnySearch。"
+}

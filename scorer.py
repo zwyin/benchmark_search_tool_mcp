@@ -247,6 +247,13 @@ def score_tc09():
             "accuracy": 5,
             "usability_for_agent": 5,
             "rationale": "8个高质量英文结果，来源覆盖corrode.dev/Reddit/GitHub/LinkedIn/Medium/YouTube。Claude自动生成结构化对比表格(Popularity/Ecosystem/API Style/Performance/Maintenance等6维度)，Agent可直接消费。WebSearch在英文技术搜索中表现优异——location=us返回高质量英文社区内容。"
+        },
+        "Context7": {
+            "relevance": 4,
+            "completeness": 2,
+            "accuracy": 5,
+            "usability_for_agent": 3,
+            "rationale": "返回4个Tokio官方运行时代码示例（#[tokio::main]/Runtime::new()/current_thread/spawn_blocking），代码质量极高。但不包含tokio vs async-std对比分析——Context7只提供单库API文档，不提供竞品对比或选型建议。技术选型场景Context7价值有限。"
         }
     }
     return scores
