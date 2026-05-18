@@ -575,5 +575,119 @@ def main():
         print(f"  {i}. {tool}: {score} ({count} tests)")
 
 
+def llm_judge_score(query, expected_content, search_results_text):
+    """
+    使用 LLM-as-Judge 自动评分（v2 改进）。
+
+    调用智谱 GLM API 对搜索结果进行 4 维度评分。
+    需要 ZHIPU_API_KEY 环境变量。
+
+    用法: python scorer.py --llm-judge
+    """
+    import os
+
+    api_key = os.environ.get("ZHIPU_API_KEY")
+    if not api_key:
+        print("错误: 需要设置 ZHIPU_API_KEY 环境变量")
+        return None
+
+    prompt = f"""你是一个搜索结果评估专家。请对以下搜索结果进行评分。
+
+## 查询
+{query}
+
+## 期望内容
+{expected_content}
+
+## 搜索结果
+{search_results_text[:8000]}
+
+## 评分标准（1-5分）
+- relevance: 返回结果与查询意图的匹配程度（1=完全无关, 5=高度精准）
+- completeness: 是否覆盖了期望内容中的关键信息点（1=缺失大部分, 5=完整覆盖）
+- accuracy: 信息的准确性和时效性（1=明显过时/错误, 5=准确详细有来源）
+- usability_for_agent: 结果对 Agent 直接使用的程度（1=需大量处理, 5=直接可用）
+
+请严格按照以下 JSON 格式输出，不要输出其他内容：
+{{"relevance": N, "completeness": N, "accuracy": N, "usability_for_agent": N, "rationale": "一句话评价"}}"""
+
+    try:
+        import urllib.request
+        data = json.dumps({
+            "model": "glm-4-flash",
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": 0.1,
+            "max_tokens": 500,
+        }).encode()
+
+        req = urllib.request.Request(
+            "https://open.bigmodel.cn/api/paas/v4/chat/completions",
+            data=data,
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+        )
+        resp = urllib.request.urlopen(req, timeout=30)
+        result = json.loads(resp.read().decode())
+        content = result["choices"][0]["message"]["content"]
+
+        # 解析 JSON 评分
+        scores = json.loads(content)
+        return scores
+    except Exception as e:
+        print(f"LLM Judge 调用失败: {e}")
+        return None
+
+
+def auto_score_all():
+    """对所有结果文件使用 LLM-as-Judge 自动评分。"""
+    test_cases = load_test_cases()
+    tc_map = {tc["id"]: tc for tc in test_cases["test_cases"]}
+
+    print("LLM-as-Judge 自动评分模式")
+    print("=" * 60)
+
+    result_files = sorted(RESULTS_DIR.glob("tc*.json"))
+    all_scores = []
+
+    for rf in result_files:
+        if "scoring" in rf.name or "latency" in rf.name or "methodology" in rf.name or "vertical" in rf.name:
+            continue
+
+        with open(rf) as f:
+            data = json.load(f)
+
+        tc_id = data.get("test_case", "")
+        if tc_id not in tc_map:
+            continue
+
+        tc = tc_map[tc_id]
+        query = tc["query"]
+        expected = tc["expected_content"]
+
+        # 提取搜索结果文本
+        results_text = json.dumps(data, ensure_ascii=False)[:8000]
+
+        print(f"\n{tc_id}: {query[:40]}...")
+        scores = llm_judge_score(query, expected, results_text)
+        if scores:
+            print(f"  → R={scores['relevance']} C={scores['completeness']} "
+                  f"A={scores['accuracy']} U={scores['usability_for_agent']}")
+            print(f"  → {scores['rationale'][:80]}")
+            all_scores.append({"tc": tc_id, **scores})
+        else:
+            print(f"  → 评分失败")
+
+    if all_scores:
+        with open(RESULTS_DIR / "llm_judge_scores.json", "w") as f:
+            json.dump(all_scores, f, ensure_ascii=False, indent=2)
+        print(f"\n已保存 {len(all_scores)} 条评分到 results/llm_judge_scores.json")
+
+
 if __name__ == "__main__":
-    main()
+    import sys as _sys
+    if "--llm-judge" in _sys.argv:
+        auto_score_all()
+    else:
+        main()

@@ -1,0 +1,76 @@
+{
+  "title": "评测方法论对比分析",
+  "date": "2026-05-19",
+  "reference_frameworks": [
+    "RAGChecker (Amazon Science) - 细粒度 RAG 评估",
+    "Ragas - LLM-as-Judge + 合成数据集",
+    "DeepEval - 自动化评测框架",
+    "RAGPerf - 端到端 pipeline 基准",
+    "HuggingFace RAG Cookbook - LLM-as-Judge 实践"
+  ],
+  "comparison": {
+    "我们的方法": {
+      "优点": [
+        "覆盖 5 个工具 × 8 场景，实用性导向",
+        "包含延迟和 token 实测数据",
+        "Agent 可用性作为独立维度（业界少见）",
+        "垂直领域搜索评测（独特）",
+        "结论直接落地到 CLAUDE.md"
+      ],
+      "差距": [
+        "评分是人工标注，非自动化 LLM-as-Judge",
+        "无重排序(reranking)评估",
+        "无多轮对话/追问场景",
+        "测试用例偏少（8 个 vs 业界通常 50-100+）",
+        "无统计显著性（每个 TC 只跑 1 次）",
+        "缺少合成数据集自动生成"
+      ]
+    },
+    "业界最佳实践": {
+      "we_should_adopt": [
+        "Ragas 的 faithfulness/answer_relevancy/context_precision 指标体系",
+        "多次运行取均值（≥3次），消除随机性",
+        "合成数据集：用 LLM 自动生成 query + ground_truth 对",
+        "自动化 LLM-as-Judge pipeline：输入 query+results → 输出 4 维度分数"
+      ],
+      "not_applicable": [
+        "RAG pipeline 组件评估（我们是工具对比，不是 RAG pipeline）",
+        "嵌入/索引评估（我们不涉及向量检索）",
+        "多模态 PDF 理解（场景不匹配）"
+      ]
+    }
+  },
+  "improvement_plan": [
+    {
+      "priority": "HIGH",
+      "item": "自动化 LLM-as-Judge",
+      "desc": "用 GLM-5.1 API 对 query+results 自动评分，替代硬编码分数",
+      "effort": "中"
+    },
+    {
+      "priority": "HIGH",
+      "item": "多次运行 + 统计",
+      "desc": "每个 TC 跑 3 次，报告均值和标准差",
+      "effort": "低"
+    },
+    {
+      "priority": "MEDIUM",
+      "item": "扩展测试集到 20+",
+      "desc": "用 LLM 合成更多 query+expected_content 对",
+      "effort": "中"
+    },
+    {
+      "priority": "LOW",
+      "item": "Ragas 维度对齐",
+      "desc": "增加 faithfulness（结果是否忠实于来源）、context_precision 指标",
+      "effort": "高"
+    }
+  ],
+  "sources": [
+    "https://github.com/amazon-science/RAGChecker",
+    "https://github.com/explodinggradients/ragas",
+    "https://huggingface.co/learn/cookbook/rag_evaluation",
+    "https://www.firecrawl.dev/blog/best-open-source-rag-frameworks",
+    "https://toloka.ai/blog/rag-evaluation-a-technical-guide-to-measuring-retrieval-augmented-generation/"
+  ]
+}
