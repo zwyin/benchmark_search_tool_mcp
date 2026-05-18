@@ -503,6 +503,19 @@ def generate_report(tool_scores, test_cases):
         lines.append(f"| {i} | {tool} | {score} | {count} |")
     lines.append("")
 
+    # ASCII bar chart
+    lines.append("### 评分可视化")
+    lines.append("")
+    lines.append("```")
+    max_score = 5.0
+    bar_width = 40
+    for tool, score, count in ranked:
+        bar_len = int(score / max_score * bar_width)
+        bar = "█" * bar_len + "░" * (bar_width - bar_len)
+        lines.append(f"  {tool:20s} {bar} {score:.2f} ({count} tests)")
+    lines.append("```")
+    lines.append("")
+
     # === Key Findings ===
     lines.append("## 2. 关键发现")
     lines.append("")
