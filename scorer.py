@@ -149,6 +149,13 @@ def score_tc04():
             "accuracy": 5,
             "usability_for_agent": 5,
             "rationale": "返回NVD官方详情+GitHub漏洞Wiki+完整POC利用代码(含reverse shell)+多平台修复公告+openEuler影响分析。比WebSearch更深入：含CWE分类(CWE-77/CWE-94)、完整漏洞复现步骤和exploit代码。耗时1959ms。"
+        },
+        "Context7": {
+            "relevance": 1,
+            "completeness": 1,
+            "accuracy": 2,
+            "usability_for_agent": 1,
+            "rationale": "返回Grafana通用安全扫描工具(gosec/govulncheck)和无关的Tempo CVE修复，完全未覆盖CVE-2024-9264。Context7只能查库/框架的配置和API文档，无法检索特定CVE详情。安全漏洞查询必须用搜索工具。"
         }
     }
     return scores

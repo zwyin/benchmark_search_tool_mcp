@@ -1,0 +1,19 @@
+{
+  "test_case": "TC04",
+  "category": "vertical_domain",
+  "tool": "Context7",
+  "query": "CVE-2024-9264 SQL injection DuckDB security vulnerability",
+  "library_id": "/websites/grafana",
+  "latency_ms": null,
+  "result_count": 4,
+  "sources": ["Grafana官方文档 (grafana.com/docs)"],
+  "key_info": [
+    "gosec工具扫描Go代码安全漏洞",
+    "ODBC数据源isql连接测试",
+    "Tempo v2.3安全修复(CVE-2022-48174/CVE-2023-39325)",
+    "Tempo v2.8.3安全修复(Go 1.25.5更新)"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 1,
+  "notes": "Context7完全无法覆盖CVE-2024-9264。返回的是Grafana通用安全扫描工具(gosec/govulncheck)和无关的Tempo版本CVE修复。Context7只能查库/框架的配置和API文档，无法检索特定CVE详情。安全漏洞查询必须用搜索工具（WebSearch/AnySearch）。这进一步证实Context7的适用范围严格限定在编程API文档。"
+}
