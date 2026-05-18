@@ -48,11 +48,11 @@ python run_benchmark.py full
 
 | 排名 | 工具 | 综合均分 | 参与测试数 |
 |------|------|----------|-----------|
-| 1 | AnySearch | 4.69 | 12 |
-| 2 | web-search-prime | 4.38 | 6 |
-| 3 | WebSearch | 4.35 | 12 |
+| 1 | AnySearch | 4.70 | 14 |
+| 2 | WebSearch | 4.43 | 14 |
+| 3 | web-search-prime | 4.25 | 14 |
 | 4 | web-reader | 4.25 | 1 |
-| 5 | Context7 | 3.83 | 6 |
+| 5 | Context7 | 3.47 | 9 |
 
 ## 三句话决策规则
 
@@ -60,8 +60,14 @@ python run_benchmark.py full
 2. **要完整 → AnySearch；要快速 → WebSearch**
 3. **英文技术 → location=us；垂直领域 → AnySearch（金融/安全），学术用 WebSearch**
 
+## 关键发现
+
+- **WebSearch = web-search-prime**：同一引擎，9 个 TC 全面验证。WebSearch 高 0.18 分（Claude 自动总结加成）
+- **Context7 严格限定于编程 API 文档**：Claude Code 插件开发满分(5/5/5/5)，但 CVE 仅 1 分、国内技术 2 分、无法获取 release notes
+- **AnySearch 金融垂直是独有能力**：实时价格/分析师评级/EPS 超预期对比，其他工具无法提供
+- **学术搜索用 WebSearch**：AnySearch 垂直学术匹配精度差（TC12: 3/3/4/3 vs WebSearch 5/5/5/5）
+- **AnySearch token 成本约 10x WebSearch**：深度研究才值得
+
 ## 测试覆盖
 
-15 个类别：国内新闻、技术文档、开源社区、垂直领域、行业研究、代码调试、国内技术、URL提取、英文技术、多语言查询、实时数据、学术搜索、深度代码文档、国内生态、金融垂直。
-
-37 个工具-TC 组合，4 维度评分（relevance/completeness/accuracy/usability_for_agent），LLM-as-Judge 验证一致。
+15 个类别 × 5 个工具 × 4 维度评分 = 52 个有效组合（69% 覆盖率，剩余为工具不适用场景）。47 条 LLM-as-Judge 自动评分验证，avg deviation 0.46 分，排名方向完全一致。
