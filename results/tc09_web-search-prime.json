@@ -1,0 +1,19 @@
+{
+  "test_case": "TC09",
+  "category": "english_technical",
+  "tool": "web-search-prime",
+  "query": "Rust tokio async runtime error handling best practices",
+  "latency_ms": null,
+  "result_count": 9,
+  "sources": ["Reddit r/rust", "Corrode.dev", "Stack Overflow", "Rust Users Forum", "tokio.rs", "YouTube", "OneUptime", "GreptimeDB", "Hacker News"],
+  "key_info": [
+    "Tokio use-cases: async for IO-bound, CPU for CPU-bound work",
+    "Corrode.dev recommends sticking with Tokio + reqwest + sqlx",
+    "Box<dyn Error> handling with async functions from crates",
+    "Tokio tutorial: async I/O, networking, scheduling, timers",
+    "GreptimeDB error handling best practices for large Rust projects"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "web-search-prime(location=us)返回9个结果，来源与WebSearch完全一致（Reddit/Corrode.dev/Stack Overflow/tokio.rs/Hacker News）。内容质量与WebSearch相同，进一步确认同引擎假设。无Claude自动总结。"
+}

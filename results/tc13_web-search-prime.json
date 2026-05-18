@@ -1,0 +1,19 @@
+{
+  "test_case": "TC13",
+  "category": "programming_docs",
+  "tool": "web-search-prime",
+  "query": "Django REST Framework serializer validation custom validator example",
+  "latency_ms": null,
+  "result_count": 10,
+  "sources": ["DRF官方文档", "Stack Overflow", "Django Forum", "Medium", "testdriven.io", "YouTube", "Reddit r/django", "MicroPyramid", "Unwired Learning"],
+  "key_info": [
+    "DRF Validators官方文档：UniqueValidator等内置验证器",
+    "Stack Overflow: 自定义字段验证（start_date < end_date）",
+    "Django Forum: serializer中定义自定义验证方法",
+    "testdriven.io: validate_<field_name>模式",
+    "DRF自定义验证器最佳实践（MicroPyramid/Unwired Learning）"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "web-search-prime(location=us)返回10个结果，来源与WebSearch完全一致（DRF官方/Stack Overflow/testdriven.io/Reddit）。编程文档搜索质量与WebSearch相同，确认同引擎。覆盖DRF验证的官方文档+社区实践+教程。"
+}

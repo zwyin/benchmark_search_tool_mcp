@@ -1,6 +1,6 @@
 # 搜索工具对比评测报告
 
-**评测时间**: 2026-05-19 06:05
+**评测时间**: 2026-05-19 06:25
 **评测工具**: WebSearch, web-search-prime, AnySearch, Context7, web-reader
 **测试用例数**: 15
 **评分方法**: LLM-as-Judge (GLM-5.1)，基于预设评分标准人工校准
@@ -13,8 +13,8 @@
 |------|------|----------|-----------|
 | 1 | AnySearch | 4.7 | 14 |
 | 2 | WebSearch | 4.35 | 12 |
-| 3 | web-reader | 4.25 | 1 |
-| 4 | web-search-prime | 4.12 | 8 |
+| 3 | web-search-prime | 4.25 | 14 |
+| 4 | web-reader | 4.25 | 1 |
 | 5 | Context7 | 3.46 | 7 |
 
 ### 评分可视化
@@ -22,8 +22,8 @@
 ```
   AnySearch            █████████████████████████████████████░░░ 4.70 (14 tests)
   WebSearch            ██████████████████████████████████░░░░░░ 4.35 (12 tests)
+  web-search-prime     ██████████████████████████████████░░░░░░ 4.25 (14 tests)
   web-reader           ██████████████████████████████████░░░░░░ 4.25 (1 tests)
-  web-search-prime     ████████████████████████████████░░░░░░░░ 4.12 (8 tests)
   Context7             ███████████████████████████░░░░░░░░░░░░░ 3.46 (7 tests)
 ```
 
@@ -89,14 +89,14 @@
 | TC06 | - | 5 | 5 | 2 | - |
 | TC07 | 5 | 5 | 5 | 2 | - |
 | TC08 | - | - | - | - | 5 |
-| TC09 | 5 | - | 5 | 4 | - |
-| TC10 | - | - | 5 | 5 | - |
-| TC11 | 5 | - | 5 | - | - |
-| TC12 | 5 | - | 3 | - | - |
-| TC13 | 5 | - | 5 | 5 | - |
+| TC09 | 5 | 5 | 5 | 4 | - |
+| TC10 | - | 5 | 5 | 5 | - |
+| TC11 | 5 | 5 | 5 | - | - |
+| TC12 | 5 | 5 | 3 | - | - |
+| TC13 | 5 | 5 | 5 | 5 | - |
 | TC14 | 4 | 2 | 5 | - | - |
-| TC15 | 3 | - | 5 | - | - |
-| **平均** | **4.5** | **4.5** | **4.86** | **3.43** | **5.0** |
+| TC15 | 3 | 4 | 5 | - | - |
+| **平均** | **4.5** | **4.64** | **4.86** | **3.43** | **5.0** |
 
 ### 完整性 (completeness)
 
@@ -112,14 +112,14 @@
 | TC06 | - | 5 | 5 | 2 | - |
 | TC07 | 5 | 5 | 5 | 1 | - |
 | TC08 | - | - | - | - | 4 |
-| TC09 | 5 | - | 4 | 2 | - |
-| TC10 | - | - | 5 | 5 | - |
-| TC11 | 5 | - | 4 | - | - |
-| TC12 | 5 | - | 3 | - | - |
-| TC13 | 5 | - | 5 | 5 | - |
+| TC09 | 5 | 5 | 4 | 2 | - |
+| TC10 | - | 5 | 5 | 5 | - |
+| TC11 | 5 | 5 | 4 | - | - |
+| TC12 | 5 | 5 | 3 | - | - |
+| TC13 | 5 | 5 | 5 | 5 | - |
 | TC14 | 3 | 2 | 5 | - | - |
-| TC15 | 2 | - | 5 | - | - |
-| **平均** | **4.33** | **4.38** | **4.71** | **3.0** | **4.0** |
+| TC15 | 2 | 4 | 5 | - | - |
+| **平均** | **4.33** | **4.57** | **4.71** | **3.0** | **4.0** |
 
 ### 准确性 (accuracy)
 
@@ -135,14 +135,14 @@
 | TC06 | - | 4 | 5 | 4 | - |
 | TC07 | 5 | 5 | 5 | 3 | - |
 | TC08 | - | - | - | - | 5 |
-| TC09 | 5 | - | 4 | 5 | - |
-| TC10 | - | - | 5 | 5 | - |
-| TC11 | 4 | - | 4 | - | - |
-| TC12 | 5 | - | 4 | - | - |
-| TC13 | 5 | - | 5 | 5 | - |
+| TC09 | 5 | 5 | 4 | 5 | - |
+| TC10 | - | 5 | 5 | 5 | - |
+| TC11 | 4 | 4 | 4 | - | - |
+| TC12 | 5 | 5 | 4 | - | - |
+| TC13 | 5 | 5 | 5 | 5 | - |
 | TC14 | 4 | 3 | 5 | - | - |
-| TC15 | 3 | - | 5 | - | - |
-| **平均** | **4.33** | **4.25** | **4.79** | **4.14** | **5.0** |
+| TC15 | 3 | 4 | 5 | - | - |
+| **平均** | **4.33** | **4.43** | **4.79** | **4.14** | **5.0** |
 
 ### Agent可用性 (usability_for_agent)
 
@@ -158,14 +158,14 @@
 | TC06 | - | 4 | 4 | 2 | - |
 | TC07 | 5 | 4 | 5 | 2 | - |
 | TC08 | - | - | - | - | 3 |
-| TC09 | 5 | - | 4 | 3 | - |
-| TC10 | - | - | 5 | 5 | - |
-| TC11 | 5 | - | 4 | - | - |
-| TC12 | 5 | - | 3 | - | - |
-| TC13 | 4 | - | 4 | 5 | - |
+| TC09 | 5 | 3 | 4 | 3 | - |
+| TC10 | - | 4 | 5 | 5 | - |
+| TC11 | 5 | 4 | 4 | - | - |
+| TC12 | 5 | 3 | 3 | - | - |
+| TC13 | 4 | 3 | 4 | 5 | - |
 | TC14 | 3 | 2 | 5 | - | - |
-| TC15 | 2 | - | 5 | - | - |
-| **平均** | **4.25** | **3.38** | **4.43** | **3.29** | **3.0** |
+| TC15 | 2 | 3 | 5 | - | - |
+| **平均** | **4.25** | **3.36** | **4.43** | **3.29** | **3.0** |
 
 ## 4. 工具详细分析
 
@@ -184,7 +184,7 @@
 
 **最佳场景**: 中文内容搜索、需要结构化总结的场景、Agent 日常使用
 
-### web-search-prime（综合均分: 4.12）
+### web-search-prime（综合均分: 4.25）
 
 **优势**:
 - 支持 location 参数（cn/us），可针对搜索意图优化
@@ -423,6 +423,9 @@
 **WebSearch**: R=5 C=5 A=5 U=5
 - 8个高质量英文结果，来源覆盖corrode.dev/Reddit/GitHub/LinkedIn/Medium/YouTube。Claude自动生成结构化对比表格(Popularity/Ecosystem/API Style/Performance/Maintenance等6维度)，Agent可直接消费。WebSearch在英文技术搜索中表现优异——location=us返回高质量英文社区内容。
 
+**web-search-prime**: R=5 C=5 A=5 U=3
+- location=us返回9个英文结果，来源与WebSearch完全一致（Reddit/Corrode.dev/Stack Overflow/tokio.rs/Hacker News）。内容质量相同，确认同引擎。无Claude自动总结，Agent需自行解析原始JSON。
+
 **AnySearch**: R=5 C=4 A=4 U=4
 - 5个结果来自DEV Community和技术博客，覆盖Tokio vs async-std 2025对比、性能tradeoffs和适用场景推荐。英文技术内容搜索质量高，对比之前TC03的WebSearch(cn定位)效果显著提升。延迟2415ms。
 
@@ -433,6 +436,9 @@
 
 ### TC10: multilingual
 **查询**: Kubernetes HPA horizontal pod autoscaler 配置教程
+
+**web-search-prime**: R=5 C=5 A=5 U=4
+- location=cn返回10个中文结果，来源高质量（K8s官方中文文档+阿里云ACK+AWS EKS+Jimmy Song+CSDN）。覆盖HPA原理、配置、自定义指标全流程。与WebSearch来源高度重叠，确认同引擎。无自动总结但原始结果信息丰富。
 
 **AnySearch**: R=5 C=5 A=5 U=5
 - 5个结果含详细中文HPA教程(webkt.com)和K8s官方文档，包含完整YAML配置示例（minReplicas/maxReplicas/scaleTargetRef/metrics）。覆盖4种自定义指标类型：Pods/Object/External/ContainerResource。延迟4238ms但信息完整。
@@ -448,6 +454,9 @@
 **WebSearch**: R=5 C=5 A=4 U=5
 - 与AnySearch返回类似结论（5月数据未发布），但Claude自动生成了更结构化的车企排名表格（比亚迪/吉利/特斯拉/小米/蔚来）和关键月份数据汇总。信息来源高度重叠（盖世汽车为主）。WebSearch的结构化总结使usability更高。
 
+**web-search-prime**: R=5 C=5 A=4 U=4
+- location=cn返回9个中文结果，具体销量数据精确（比亚迪460.2万辆/特斯拉85.2万辆同比下滑7.1%/中国全年1649万辆）。来源与WebSearch高度重叠（凤凰网/雪球/汽车之家）。内容质量几乎相同，确认同引擎。
+
 **AnySearch**: R=5 C=4 A=4 U=4
 - 返回2026年4月新能源销量排行数据（5月数据尚未完全发布），时效性良好。数据源为盖世汽车（权威汽车数据源）。延迟2305ms。实时数据查询能力是搜索工具的核心价值，但数据滞后1个月说明实时性仍受限。
 
@@ -459,6 +468,9 @@
 **WebSearch**: R=5 C=5 A=5 U=5
 - 8个高质量学术结果，覆盖arxiv综述(arxiv 2507.19595)/通用注意力调查PDF/高级注意力技术博客/OpenReview论文/社区讨论。Claude自动总结提供关键趋势：高效注意力/稀疏注意力/选择性注意力/Mamba替代架构。查询匹配精准度远高于AnySearch学术垂直搜索。
 
+**web-search-prime**: R=5 C=5 A=5 U=3
+- location=us返回10个学术结果，来源与WebSearch完全一致（arXiv/OpenReview/Semantic Scholar/Google Research/Wikipedia）。学术搜索质量与WebSearch相同，确认同引擎。无Claude自动总结。
+
 **AnySearch**: R=3 C=3 A=4 U=3
 - 成功返回PubMed论文结果，但搜索结果与query相关性一般——返回了点云分析的Geometrically aware transformer而非attention机制综述。说明学术垂直搜索的查询匹配精度还需优化。延迟2006ms。
 
@@ -469,6 +481,9 @@
 
 **WebSearch**: R=5 C=5 A=5 U=4
 - 10个高质量结果覆盖DRF官方文档+Stack Overflow+社区教程。Claude自动生成4种验证方式对比表格（field-level/object-level/validator function/validator class）。信息全面但缺少直接可粘贴的代码示例——提供概念理解而非直接代码。对比Context7的纯代码输出，WebSearch更适合学习理解，Context7更适合直接编写代码。
+
+**web-search-prime**: R=5 C=5 A=5 U=3
+- location=us返回10个结果，来源与WebSearch完全一致（DRF官方/Stack Overflow/testdriven.io/Reddit/Django Forum）。编程文档搜索质量与WebSearch相同，确认同引擎。无Claude自动总结。
 
 **AnySearch**: R=5 C=5 A=5 U=4
 - 5个结果含8个代码示例，覆盖字段级/对象级/函数式/类验证器4种方式+required=False行为+Meta.validators。延迟1210ms。信息全面性最高（SO回答+DRF官方文档混合）。对比Context7的零噪音代码和WebSearch的概念表格，AnySearch在代码量和解释深度上取得平衡。
@@ -497,6 +512,9 @@
 
 **WebSearch**: R=3 C=2 A=3 U=2
 - WebSearch遇到速率限制未返回数据。基于工具特性预估：WebSearch可返回AAPL相关新闻文章和价格概况，但无法提供结构化金融数据（实时精确价格/分析师评级分布/EPS超预期百分比）。金融垂直搜索是AnySearch的独有能力，WebSearch在此场景只有基础新闻覆盖能力。
+
+**web-search-prime**: R=4 C=4 A=4 U=3
+- location=us返回9个英文金融网站结果（MarketWatch/WSJ/TipRanks/TradingView/CNN/Seeking Alpha）。数据详细：价格$298.21、67%买入评级、目标价$308-318、EPS估计。比WebSearch（被限流）表现好，但仍不如AnySearch的结构化垂直数据（EPS实际vs预期、精确评级分布）。原始JSON需Agent自行解析。
 
 **AnySearch**: R=5 C=5 A=5 U=5
 - 返回结构化股票数据：实时价格$295.81（下跌1.47%）、日内高低点$300.66/$294.91、EPS实际$2.01 vs预期$1.99（超预期1.09%）、分析师评级（StrongBuy=15, Buy=24, Hold=13, Sell=2）。延迟1311ms。这是WebSearch/Context7完全无法提供的独特能力——结构化金融垂直数据。

@@ -1,0 +1,19 @@
+{
+  "test_case": "TC12",
+  "category": "academic",
+  "tool": "web-search-prime",
+  "query": "transformer attention mechanism survey paper 2024 2025",
+  "latency_ms": null,
+  "result_count": 10,
+  "sources": ["Shahroodut.ac.ir (PDF)", "Wikipedia", "arXiv", "Towards AI", "ResearchGate", "Medium", "Google Research", "YouTube", "OpenReview", "Semantic Scholar"],
+  "key_info": [
+    "Attention Mechanisms in Transformers: A General Survey (PDF)",
+    "Efficient Attention Mechanisms for Large LLMs (arXiv 2507.19595)",
+    "Attention Is All You Need原始论文（Google Research）",
+    "Selective Attention Improves Transformer (OpenReview)",
+    "A Survey on Attention mechanism in NLP (Semantic Scholar)"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "web-search-prime(location=us)返回10个结果，来源与WebSearch完全一致（arXiv/OpenReview/Semantic Scholar/Google Research/Wikipedia）。学术搜索质量与WebSearch相同，确认同引擎。无Claude自动总结。"
+}

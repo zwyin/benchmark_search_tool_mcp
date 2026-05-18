@@ -1,0 +1,19 @@
+{
+  "test_case": "TC15",
+  "category": "finance",
+  "tool": "web-search-prime",
+  "query": "AAPL Apple stock price analyst rating earnings 2025",
+  "latency_ms": null,
+  "result_count": 9,
+  "sources": ["CNN Markets", "TipRanks", "MarketWatch", "WSJ", "TradingView", "MarketBeat", "Seeking Alpha", "StockAnalysis", "MarketScreener"],
+  "key_info": [
+    "AAPL当前价格$298.21，67%分析师建议买入",
+    "TipRanks: 63 Buy/23 Hold/4 Sell，平均目标价$318.75",
+    "MarketWatch: 2025 EPS High $7.48, 2026 EPS High $9.00",
+    "TradingView: 目标价$312.56（最高$400/最低$215）",
+    "MarketBeat: 35位分析师平均目标价$308.74"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "web-search-prime(location=us)返回9个金融结果，来源均为英文专业金融网站（MarketWatch/WSJ/TipRanks/TradingView/Seeking Alpha）。数据详细：价格$298.21，目标价$308-318，67%买入评级。location=us返回高质量英文金融数据，远优于location=cn。"
+}

@@ -290,6 +290,13 @@ def score_tc09():
             "usability_for_agent": 5,
             "rationale": "8个高质量英文结果，来源覆盖corrode.dev/Reddit/GitHub/LinkedIn/Medium/YouTube。Claude自动生成结构化对比表格(Popularity/Ecosystem/API Style/Performance/Maintenance等6维度)，Agent可直接消费。WebSearch在英文技术搜索中表现优异——location=us返回高质量英文社区内容。"
         },
+        "web-search-prime": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 3,
+            "rationale": "location=us返回9个英文结果，来源与WebSearch完全一致（Reddit/Corrode.dev/Stack Overflow/tokio.rs/Hacker News）。内容质量相同，确认同引擎。无Claude自动总结，Agent需自行解析原始JSON。"
+        },
         "Context7": {
             "relevance": 4,
             "completeness": 2,
@@ -310,6 +317,13 @@ def score_tc10():
             "accuracy": 5,
             "usability_for_agent": 5,
             "rationale": "5个结果含详细中文HPA教程(webkt.com)和K8s官方文档，包含完整YAML配置示例（minReplicas/maxReplicas/scaleTargetRef/metrics）。覆盖4种自定义指标类型：Pods/Object/External/ContainerResource。延迟4238ms但信息完整。"
+        },
+        "web-search-prime": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 4,
+            "rationale": "location=cn返回10个中文结果，来源高质量（K8s官方中文文档+阿里云ACK+AWS EKS+Jimmy Song+CSDN）。覆盖HPA原理、配置、自定义指标全流程。与WebSearch来源高度重叠，确认同引擎。无自动总结但原始结果信息丰富。"
         },
         "Context7": {
             "relevance": 5,
@@ -338,6 +352,13 @@ def score_tc11():
             "accuracy": 4,
             "usability_for_agent": 5,
             "rationale": "与AnySearch返回类似结论（5月数据未发布），但Claude自动生成了更结构化的车企排名表格（比亚迪/吉利/特斯拉/小米/蔚来）和关键月份数据汇总。信息来源高度重叠（盖世汽车为主）。WebSearch的结构化总结使usability更高。"
+        },
+        "web-search-prime": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 4,
+            "usability_for_agent": 4,
+            "rationale": "location=cn返回9个中文结果，具体销量数据精确（比亚迪460.2万辆/特斯拉85.2万辆同比下滑7.1%/中国全年1649万辆）。来源与WebSearch高度重叠（凤凰网/雪球/汽车之家）。内容质量几乎相同，确认同引擎。"
         }
     }
     return scores
@@ -359,6 +380,13 @@ def score_tc12():
             "accuracy": 5,
             "usability_for_agent": 5,
             "rationale": "8个高质量学术结果，覆盖arxiv综述(arxiv 2507.19595)/通用注意力调查PDF/高级注意力技术博客/OpenReview论文/社区讨论。Claude自动总结提供关键趋势：高效注意力/稀疏注意力/选择性注意力/Mamba替代架构。查询匹配精准度远高于AnySearch学术垂直搜索。"
+        },
+        "web-search-prime": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 3,
+            "rationale": "location=us返回10个学术结果，来源与WebSearch完全一致（arXiv/OpenReview/Semantic Scholar/Google Research/Wikipedia）。学术搜索质量与WebSearch相同，确认同引擎。无Claude自动总结。"
         }
     }
     return scores
@@ -380,6 +408,13 @@ def score_tc13():
             "accuracy": 5,
             "usability_for_agent": 4,
             "rationale": "10个高质量结果覆盖DRF官方文档+Stack Overflow+社区教程。Claude自动生成4种验证方式对比表格（field-level/object-level/validator function/validator class）。信息全面但缺少直接可粘贴的代码示例——提供概念理解而非直接代码。对比Context7的纯代码输出，WebSearch更适合学习理解，Context7更适合直接编写代码。"
+        },
+        "web-search-prime": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 3,
+            "rationale": "location=us返回10个结果，来源与WebSearch完全一致（DRF官方/Stack Overflow/testdriven.io/Reddit/Django Forum）。编程文档搜索质量与WebSearch相同，确认同引擎。无Claude自动总结。"
         },
         "AnySearch": {
             "relevance": 5,
@@ -436,6 +471,13 @@ def score_tc15():
             "accuracy": 3,
             "usability_for_agent": 2,
             "rationale": "WebSearch遇到速率限制未返回数据。基于工具特性预估：WebSearch可返回AAPL相关新闻文章和价格概况，但无法提供结构化金融数据（实时精确价格/分析师评级分布/EPS超预期百分比）。金融垂直搜索是AnySearch的独有能力，WebSearch在此场景只有基础新闻覆盖能力。"
+        },
+        "web-search-prime": {
+            "relevance": 4,
+            "completeness": 4,
+            "accuracy": 4,
+            "usability_for_agent": 3,
+            "rationale": "location=us返回9个英文金融网站结果（MarketWatch/WSJ/TipRanks/TradingView/CNN/Seeking Alpha）。数据详细：价格$298.21、67%买入评级、目标价$308-318、EPS估计。比WebSearch（被限流）表现好，但仍不如AnySearch的结构化垂直数据（EPS实际vs预期、精确评级分布）。原始JSON需Agent自行解析。"
         }
     }
     return scores

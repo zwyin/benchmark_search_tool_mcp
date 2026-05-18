@@ -1,0 +1,19 @@
+{
+  "test_case": "TC11",
+  "category": "chinese_financial",
+  "tool": "web-search-prime",
+  "query": "2025年中国新能源汽车销量排行 比亚迪 特斯拉",
+  "latency_ms": null,
+  "result_count": 9,
+  "sources": ["深圳发改委", "凤凰网汽车", "电动汽车观察家", "雪球", "汽车之家", "红车网", "IN-ENERGY", "PCHome", "第一电动网"],
+  "key_info": [
+    "比亚迪2025年新能源销量460.2万辆，全球电车销冠",
+    "纯电车型销量225.7万辆，同比增长27.86%",
+    "特斯拉中国销量85.2万辆，同比下滑7.1%",
+    "中国2025年新能源全年销量1649万辆",
+    "小米首次进入前十，交付破5万辆"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "web-search-prime(location=cn)返回9个中文结果，来源与WebSearch高度重叠（凤凰网/电动汽车观察家/雪球/汽车之家）。具体销量数据精确（比亚迪460.2万辆 vs WebSearch的460万辆）。内容质量与WebSearch几乎相同，确认同引擎。"
+}

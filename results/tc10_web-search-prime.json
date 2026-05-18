@@ -1,0 +1,19 @@
+{
+  "test_case": "TC10",
+  "category": "chinese_technical",
+  "tool": "web-search-prime",
+  "query": "Kubernetes HPA autoscaling custom metrics 配置教程",
+  "latency_ms": null,
+  "result_count": 10,
+  "sources": ["Kubernetes官方文档", "Jimmy Song", "AWS EKS文档", "阿里云ACK", "liangyuanpeng.com", "CSDN", "YouTube", "iT邦幫忙", "阿里云开发者社区"],
+  "key_info": [
+    "Kubernetes HPA演练（官方中文文档）",
+    "HPA工作原理与自定义指标支持（Jimmy Song）",
+    "Amazon EKS HPA配置指南",
+    "阿里云ACK容器水平伸缩配置",
+    "HPA定制指标实现CPU和内存扩展"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "web-search-prime(location=cn)返回10个中文结果，来源质量高（Kubernetes官方+阿里云+AWS+CSDN）。与WebSearch来源高度重叠，确认同引擎。覆盖HPA原理、配置、自定义指标全流程。"
+}
