@@ -1,0 +1,21 @@
+{
+  "test_case": "TC14",
+  "category": "domestic_ecosystem",
+  "tool": "AnySearch",
+  "query": "Dify 0.15 新功能 开源AI应用开发平台",
+  "domain": "domestic_ecosystem",
+  "sub_domain": "ai_platform",
+  "latency_ms": 2019,
+  "result_count": 5,
+  "sources": ["GitHub (langgenius/dify)", "技术社区"],
+  "key_info": [
+    "Dify v0.15.0发布，新增Parent-child Retrieval功能",
+    "支持子索引独立检索+父文档上下文返回，提升RAG精度",
+    "Workflow改进：迭代节点支持并行执行",
+    "Bug修复：知识库删除、API认证、流式输出等多项修复",
+    "完整changelog可在GitHub Release查看"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "成功返回Dify 0.15.0 GitHub Release Notes完整内容，包含新功能列表和bug修复详情。延迟2019ms。AnySearch在国内开源生态搜索中表现优秀，能准确获取GitHub Release Notes。对比WebSearch可能只返回博客文章链接，AnySearch直接提供全文内容。"
+}

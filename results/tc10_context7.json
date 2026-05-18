@@ -1,0 +1,20 @@
+{
+  "test_case": "TC10",
+  "category": "multilingual_query",
+  "tool": "Context7",
+  "query": "Kubernetes HPA autoscaling custom metrics",
+  "library_id": "/kubernetes/website",
+  "latency_ms": null,
+  "result_count": 5,
+  "sources": ["Kubernetes官方文档 (kubernetes.io)"],
+  "key_info": [
+    "HorizontalPodAutoscalerSpec包含scaleTargetRef/minReplicas/maxReplicas/metrics",
+    "ContainerResource指标源：指定容器名和资源类型",
+    "External指标源：支持从外部系统（如Prometheus）获取指标",
+    "自定义指标需配合Metrics API和自定义指标API",
+    "metrics字段支持多种类型：Pods/Object/External/ContainerResource"
+  ],
+  "has_code_examples": true,
+  "code_snippets_count": 3,
+  "notes": "Context7直接从K8s官方仓库返回精确文档，包含HPA YAML spec和metrics配置。代码示例质量高（官方源码级别），零噪声。对混合中英文查询，Context7仅处理英文技术术语部分，不涉及中文生态内容。"
+}

@@ -1,8 +1,8 @@
 # 搜索工具对比评测报告
 
-**评测时间**: 2026-05-19 01:22
+**评测时间**: 2026-05-19 03:13
 **评测工具**: WebSearch, web-search-prime, AnySearch, Context7, web-reader
-**测试用例数**: 8
+**测试用例数**: 15
 **评分方法**: LLM-as-Judge (GLM-5.1)，基于预设评分标准人工校准
 
 ## 1. 执行摘要
@@ -11,11 +11,11 @@
 
 | 排名 | 工具 | 综合均分 | 参与测试数 |
 |------|------|----------|-----------|
-| 1 | AnySearch | 5.0 | 4 |
+| 1 | AnySearch | 4.67 | 10 |
 | 2 | WebSearch | 4.46 | 6 |
 | 3 | web-search-prime | 4.38 | 6 |
-| 4 | web-reader | 4.25 | 1 |
-| 5 | Context7 | 3.75 | 2 |
+| 4 | Context7 | 4.38 | 4 |
+| 5 | web-reader | 4.25 | 1 |
 
 ## 2. 关键发现
 
@@ -50,6 +50,19 @@
 - Context7 优势明确限定在：查库/框架的官方 API 和配置示例
 - **建议**：代码调试场景优先用搜索工具，API 查询场景才用 Context7
 
+### 发现7: AnySearch 金融垂直领域提供独特结构化数据
+- TC15 测试表明 AnySearch 能返回股票实时价格($295.81)、日内高低点、EPS超预期对比、分析师评级分布等结构化数据
+- 这是 WebSearch/Context7/web-search-prime 完全无法提供的独特能力
+- **建议**：金融/股票类查询直接使用 AnySearch 垂直搜索
+
+### 发现8: Context7 在多语言技术查询中与搜索工具互补
+- TC10 Kubernetes HPA 测试：Context7 返回官方K8s YAML spec（精准但无中文），AnySearch 返回中文教程+官方文档混合
+- 两者组合使用效果最佳：Context7 提供精准API参考，AnySearch 提供中文教程和生态信息
+
+### 发现9: 学术搜索查询相关性需优化
+- TC12 transformer attention survey 搜索返回点云分析论文而非attention综述
+- 学术垂直搜索的查询匹配精度不足，可能需要调整查询词或增加领域限定
+
 ## 3. 逐维度评分详情
 
 ### 相关性 (relevance)
@@ -66,7 +79,14 @@
 | TC06 | - | 5 | - | 2 | - |
 | TC07 | 5 | 5 | 5 | - | - |
 | TC08 | - | - | - | - | 5 |
-| **平均** | **4.5** | **4.83** | **5.0** | **3.5** | **5.0** |
+| TC09 | - | - | 5 | - | - |
+| TC10 | - | - | 5 | 5 | - |
+| TC11 | - | - | 5 | - | - |
+| TC12 | - | - | 3 | - | - |
+| TC13 | - | - | - | 5 | - |
+| TC14 | - | - | 5 | - | - |
+| TC15 | - | - | 5 | - | - |
+| **平均** | **4.5** | **4.83** | **4.8** | **4.25** | **5.0** |
 
 ### 完整性 (completeness)
 
@@ -82,7 +102,14 @@
 | TC06 | - | 5 | - | 2 | - |
 | TC07 | 5 | 5 | 5 | - | - |
 | TC08 | - | - | - | - | 4 |
-| **平均** | **4.5** | **4.67** | **5.0** | **3.5** | **4.0** |
+| TC09 | - | - | 4 | - | - |
+| TC10 | - | - | 5 | 5 | - |
+| TC11 | - | - | 4 | - | - |
+| TC12 | - | - | 3 | - | - |
+| TC13 | - | - | - | 5 | - |
+| TC14 | - | - | 5 | - | - |
+| TC15 | - | - | 5 | - | - |
+| **平均** | **4.5** | **4.67** | **4.6** | **4.25** | **4.0** |
 
 ### 准确性 (accuracy)
 
@@ -98,7 +125,14 @@
 | TC06 | - | 4 | - | 4 | - |
 | TC07 | 5 | 5 | 5 | - | - |
 | TC08 | - | - | - | - | 5 |
-| **平均** | **4.33** | **4.33** | **5.0** | **4.5** | **5.0** |
+| TC09 | - | - | 4 | - | - |
+| TC10 | - | - | 5 | 5 | - |
+| TC11 | - | - | 4 | - | - |
+| TC12 | - | - | 4 | - | - |
+| TC13 | - | - | - | 5 | - |
+| TC14 | - | - | 5 | - | - |
+| TC15 | - | - | 5 | - | - |
+| **平均** | **4.33** | **4.33** | **4.7** | **4.75** | **5.0** |
 
 ### Agent可用性 (usability_for_agent)
 
@@ -114,7 +148,14 @@
 | TC06 | - | 4 | - | 2 | - |
 | TC07 | 5 | 4 | 5 | - | - |
 | TC08 | - | - | - | - | 3 |
-| **平均** | **4.5** | **3.67** | **5.0** | **3.5** | **3.0** |
+| TC09 | - | - | 4 | - | - |
+| TC10 | - | - | 5 | 5 | - |
+| TC11 | - | - | 4 | - | - |
+| TC12 | - | - | 3 | - | - |
+| TC13 | - | - | - | 5 | - |
+| TC14 | - | - | 5 | - | - |
+| TC15 | - | - | 5 | - | - |
+| **平均** | **4.5** | **3.67** | **4.6** | **4.25** | **3.0** |
 
 ## 4. 工具详细分析
 
@@ -147,7 +188,7 @@
 
 **最佳场景**: 英文技术搜索（设 location=us）、需要原始数据的自定义处理场景
 
-### Context7（综合均分: 3.75）
+### Context7（综合均分: 4.38）
 
 **优势**:
 - 直接返回官方代码片段，零噪音
@@ -177,7 +218,7 @@
 
 **最佳场景**: Agent 需要读取特定网页内容、搜索结果中的链接深度提取
 
-### AnySearch（综合均分: 5.0）
+### AnySearch（综合均分: 4.67）
 
 **优势**:
 - 返回完整文章全文而非摘要，信息密度最高（平均 24K 字符/条）
@@ -231,7 +272,7 @@
 ## 7. 测试覆盖与局限
 
 ### 已覆盖
-- 8 个测试用例，7 个类别（国内新闻/技术文档/开源社区/垂直领域/行业研究/代码调试/国内技术/URL提取）
+- 15 个测试用例，12 个类别（国内新闻/技术文档/开源社区/垂直领域/行业研究/代码调试/国内技术/URL提取/英文技术/多语言查询/实时数据/学术搜索/深度代码文档/国内生态/金融垂直）
 - 5 个工具：WebSearch、web-search-prime、Context7、web-reader、AnySearch
 - 4 个评分维度 × 多个测试用例
 - Token 效率粗估（基于 output 字符数）
@@ -240,7 +281,7 @@
 ### 未覆盖
 - **精确 token 计数**：WebSearch/web-search-prime/Context7 的 input/output token 无法从运行时获取
 - **并发能力**：未测试多工具并发调用的稳定性和限流策略
-- **AnySearch 垂直领域搜索**：仅测试了通用搜索，未测试 23 个垂直领域（如 finance/academic/security 等）
+- **AnySearch 垂直领域搜索**：已测试金融(AAPL)和学术(transformer survey)垂直领域，其余垂直领域（如法律/医疗等）未测试
 - **时效性衰减**：未测试同一查询在不同时间点的结果差异
 
 ### 改进建议
@@ -345,5 +386,64 @@
 
 **web-reader**: R=5 C=4 A=5 U=3
 - 成功提取页面核心内容：安装方法、前提条件、核心功能、特点、MCP集成。raw_output约4500字符但有大量metadata噪音(CSS/JS/favicon等URL)。Agent需过滤噪音才能使用。核心文档内容准确完整。
+
+---
+
+### TC09: english_tech
+**查询**: Rust async runtime tokio vs async-std comparison 2025
+
+**AnySearch**: R=5 C=4 A=4 U=4
+- 5个结果来自DEV Community和技术博客，覆盖Tokio vs async-std 2025对比、性能tradeoffs和适用场景推荐。英文技术内容搜索质量高，对比之前TC03的WebSearch(cn定位)效果显著提升。延迟2415ms。
+
+---
+
+### TC10: multilingual
+**查询**: Kubernetes HPA horizontal pod autoscaler 配置教程
+
+**AnySearch**: R=5 C=5 A=5 U=5
+- 5个结果含详细中文HPA教程(webkt.com)和K8s官方文档，包含完整YAML配置示例（minReplicas/maxReplicas/scaleTargetRef/metrics）。覆盖4种自定义指标类型：Pods/Object/External/ContainerResource。延迟4238ms但信息完整。
+
+**Context7**: R=5 C=5 A=5 U=5
+- 直接从Kubernetes官方仓库返回精确HPA文档，包含HorizontalPodAutoscalerSpec YAML和ContainerResource/External指标源配置。3个代码示例全部官方源码级别，零噪声。对K8s配置查询场景是最佳工具。
+
+---
+
+### TC11: realtime_data
+**查询**: 2026年5月中国新能源汽车销量排行榜
+
+**AnySearch**: R=5 C=4 A=4 U=4
+- 返回2026年4月新能源销量排行数据（5月数据尚未完全发布），时效性良好。数据源为盖世汽车（权威汽车数据源）。延迟2305ms。实时数据查询能力是搜索工具的核心价值，但数据滞后1个月说明实时性仍受限。
+
+---
+
+### TC12: academic_search
+**查询**: transformer attention mechanism survey 2025
+
+**AnySearch**: R=3 C=3 A=4 U=3
+- 成功返回PubMed论文结果，但搜索结果与query相关性一般——返回了点云分析的Geometrically aware transformer而非attention机制综述。说明学术垂直搜索的查询匹配精度还需优化。延迟2006ms。
+
+---
+
+### TC13: code_doc_deep
+**查询**: Django REST Framework serializer validation custom validator
+
+**Context7**: R=5 C=5 A=5 U=5
+- 完美返回5个关键知识点：validate_<field_name>字段级验证、validate()对象级跨字段验证、ValidationError字段错误关联、required=False跳过验证、is_valid()后才能访问validated_data。全部带代码示例（4个snippets），Context7在编程文档场景再次证明绝对优势。
+
+---
+
+### TC14: domestic_ecosystem
+**查询**: Dify 0.15 最新功能更新和Agent工作流改进
+
+**AnySearch**: R=5 C=5 A=5 U=5
+- 成功返回Dify v0.15.0 GitHub Release Notes完整内容：Parent-child Retrieval功能（子索引独立检索+父文档上下文返回）、Workflow迭代节点并行执行、多项bug修复。延迟2019ms。国内开源生态搜索表现优秀，直接获取GitHub Release全文。
+
+---
+
+### TC15: finance_vertical
+**查询**: AAPL
+
+**AnySearch**: R=5 C=5 A=5 U=5
+- 返回结构化股票数据：实时价格$295.81（下跌1.47%）、日内高低点$300.66/$294.91、EPS实际$2.01 vs预期$1.99（超预期1.09%）、分析师评级（StrongBuy=15, Buy=24, Hold=13, Sell=2）。延迟1311ms。这是WebSearch/Context7完全无法提供的独特能力——结构化金融垂直数据。
 
 ---

@@ -1,0 +1,21 @@
+{
+  "test_case": "TC10",
+  "category": "multilingual_query",
+  "tool": "AnySearch",
+  "query": "Kubernetes HPA autoscaling 自定义指标 配置教程",
+  "domain": "cloud_native",
+  "sub_domain": "kubernetes",
+  "latency_ms": 4238,
+  "result_count": 5,
+  "sources": ["webkt.com", "kubernetes.io", "技术博客"],
+  "key_info": [
+    "HPA基于CPU/内存使用率自动扩缩Pod副本数",
+    "自定义指标需安装Prometheus Adapter",
+    "HorizontalPodAutoscaler API v2支持ContainerResource和External指标源",
+    "YAML配置示例包含minReplicas/maxReplicas/scaleTargetRef",
+    "自定义指标类型：Pods/Object/External/ContainerResource"
+  ],
+  "has_code_examples": true,
+  "code_snippets_count": 2,
+  "notes": "返回详细中文教程（webkt.com）和K8s官方文档，包含完整YAML配置示例。延迟4238ms，信息密度高。混合中英文查询表现良好，能理解K8s技术术语并返回相关中文内容。"
+}

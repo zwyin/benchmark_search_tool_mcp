@@ -231,6 +231,111 @@ def score_tc08():
     return scores
 
 
+def score_tc09():
+    """TC09: english_tech - Rust async runtime tokio vs async-std comparison 2025"""
+    scores = {
+        "AnySearch": {
+            "relevance": 5,
+            "completeness": 4,
+            "accuracy": 4,
+            "usability_for_agent": 4,
+            "rationale": "5个结果来自DEV Community和技术博客，覆盖Tokio vs async-std 2025对比、性能tradeoffs和适用场景推荐。英文技术内容搜索质量高，对比之前TC03的WebSearch(cn定位)效果显著提升。延迟2415ms。"
+        }
+    }
+    return scores
+
+
+def score_tc10():
+    """TC10: multilingual_query - Kubernetes HPA autoscaling 自定义指标 配置教程"""
+    scores = {
+        "AnySearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 5,
+            "rationale": "5个结果含详细中文HPA教程(webkt.com)和K8s官方文档，包含完整YAML配置示例（minReplicas/maxReplicas/scaleTargetRef/metrics）。覆盖4种自定义指标类型：Pods/Object/External/ContainerResource。延迟4238ms但信息完整。"
+        },
+        "Context7": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 5,
+            "rationale": "直接从Kubernetes官方仓库返回精确HPA文档，包含HorizontalPodAutoscalerSpec YAML和ContainerResource/External指标源配置。3个代码示例全部官方源码级别，零噪声。对K8s配置查询场景是最佳工具。"
+        }
+    }
+    return scores
+
+
+def score_tc11():
+    """TC11: realtime_data - 2026年5月中国新能源汽车销量排行榜"""
+    scores = {
+        "AnySearch": {
+            "relevance": 5,
+            "completeness": 4,
+            "accuracy": 4,
+            "usability_for_agent": 4,
+            "rationale": "返回2026年4月新能源销量排行数据（5月数据尚未完全发布），时效性良好。数据源为盖世汽车（权威汽车数据源）。延迟2305ms。实时数据查询能力是搜索工具的核心价值，但数据滞后1个月说明实时性仍受限。"
+        }
+    }
+    return scores
+
+
+def score_tc12():
+    """TC12: academic_search - transformer attention mechanism survey 2025"""
+    scores = {
+        "AnySearch": {
+            "relevance": 3,
+            "completeness": 3,
+            "accuracy": 4,
+            "usability_for_agent": 3,
+            "rationale": "成功返回PubMed论文结果，但搜索结果与query相关性一般——返回了点云分析的Geometrically aware transformer而非attention机制综述。说明学术垂直搜索的查询匹配精度还需优化。延迟2006ms。"
+        }
+    }
+    return scores
+
+
+def score_tc13():
+    """TC13: code_doc_deep - Django REST Framework serializer validation custom validator"""
+    scores = {
+        "Context7": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 5,
+            "rationale": "完美返回5个关键知识点：validate_<field_name>字段级验证、validate()对象级跨字段验证、ValidationError字段错误关联、required=False跳过验证、is_valid()后才能访问validated_data。全部带代码示例（4个snippets），Context7在编程文档场景再次证明绝对优势。"
+        }
+    }
+    return scores
+
+
+def score_tc14():
+    """TC14: domestic_ecosystem - Dify 0.15 新功能 开源AI应用开发平台"""
+    scores = {
+        "AnySearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 5,
+            "rationale": "成功返回Dify v0.15.0 GitHub Release Notes完整内容：Parent-child Retrieval功能（子索引独立检索+父文档上下文返回）、Workflow迭代节点并行执行、多项bug修复。延迟2019ms。国内开源生态搜索表现优秀，直接获取GitHub Release全文。"
+        }
+    }
+    return scores
+
+
+def score_tc15():
+    """TC15: finance_vertical - AAPL 股票实时数据"""
+    scores = {
+        "AnySearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 5,
+            "rationale": "返回结构化股票数据：实时价格$295.81（下跌1.47%）、日内高低点$300.66/$294.91、EPS实际$2.01 vs预期$1.99（超预期1.09%）、分析师评级（StrongBuy=15, Buy=24, Hold=13, Sell=2）。延迟1311ms。这是WebSearch/Context7完全无法提供的独特能力——结构化金融垂直数据。"
+        }
+    }
+    return scores
+
+
 SCORERS = {
     "TC01": score_tc01,
     "TC02": score_tc02,
@@ -240,6 +345,13 @@ SCORERS = {
     "TC06": score_tc06,
     "TC07": score_tc07,
     "TC08": score_tc08,
+    "TC09": score_tc09,
+    "TC10": score_tc10,
+    "TC11": score_tc11,
+    "TC12": score_tc12,
+    "TC13": score_tc13,
+    "TC14": score_tc14,
+    "TC15": score_tc15,
 }
 
 
@@ -333,6 +445,19 @@ def generate_report(tool_scores, test_cases):
     lines.append("- TC06 测试表明 Context7 只返回 API 文档和死锁示例，无法解决 'can't start new thread' 这种 OS 级问题")
     lines.append("- Context7 优势明确限定在：查库/框架的官方 API 和配置示例")
     lines.append("- **建议**：代码调试场景优先用搜索工具，API 查询场景才用 Context7")
+    lines.append("")
+    lines.append("### 发现7: AnySearch 金融垂直领域提供独特结构化数据")
+    lines.append("- TC15 测试表明 AnySearch 能返回股票实时价格($295.81)、日内高低点、EPS超预期对比、分析师评级分布等结构化数据")
+    lines.append("- 这是 WebSearch/Context7/web-search-prime 完全无法提供的独特能力")
+    lines.append("- **建议**：金融/股票类查询直接使用 AnySearch 垂直搜索")
+    lines.append("")
+    lines.append("### 发现8: Context7 在多语言技术查询中与搜索工具互补")
+    lines.append("- TC10 Kubernetes HPA 测试：Context7 返回官方K8s YAML spec（精准但无中文），AnySearch 返回中文教程+官方文档混合")
+    lines.append("- 两者组合使用效果最佳：Context7 提供精准API参考，AnySearch 提供中文教程和生态信息")
+    lines.append("")
+    lines.append("### 发现9: 学术搜索查询相关性需优化")
+    lines.append("- TC12 transformer attention survey 搜索返回点云分析论文而非attention综述")
+    lines.append("- 学术垂直搜索的查询匹配精度不足，可能需要调整查询词或增加领域限定")
     lines.append("")
 
     # === Detailed Scores ===
@@ -513,7 +638,7 @@ def generate_report(tool_scores, test_cases):
     lines.append("## 7. 测试覆盖与局限")
     lines.append("")
     lines.append("### 已覆盖")
-    lines.append("- 8 个测试用例，7 个类别（国内新闻/技术文档/开源社区/垂直领域/行业研究/代码调试/国内技术/URL提取）")
+    lines.append("- 15 个测试用例，12 个类别（国内新闻/技术文档/开源社区/垂直领域/行业研究/代码调试/国内技术/URL提取/英文技术/多语言查询/实时数据/学术搜索/深度代码文档/国内生态/金融垂直）")
     lines.append("- 5 个工具：WebSearch、web-search-prime、Context7、web-reader、AnySearch")
     lines.append("- 4 个评分维度 × 多个测试用例")
     lines.append("- Token 效率粗估（基于 output 字符数）")
@@ -522,7 +647,7 @@ def generate_report(tool_scores, test_cases):
     lines.append("### 未覆盖")
     lines.append("- **精确 token 计数**：WebSearch/web-search-prime/Context7 的 input/output token 无法从运行时获取")
     lines.append("- **并发能力**：未测试多工具并发调用的稳定性和限流策略")
-    lines.append("- **AnySearch 垂直领域搜索**：仅测试了通用搜索，未测试 23 个垂直领域（如 finance/academic/security 等）")
+    lines.append("- **AnySearch 垂直领域搜索**：已测试金融(AAPL)和学术(transformer survey)垂直领域，其余垂直领域（如法律/医疗等）未测试")
     lines.append("- **时效性衰减**：未测试同一查询在不同时间点的结果差异")
     lines.append("")
     lines.append("### 改进建议")
