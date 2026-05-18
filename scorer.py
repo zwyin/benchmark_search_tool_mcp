@@ -150,6 +150,13 @@ def score_tc04():
             "usability_for_agent": 5,
             "rationale": "返回NVD官方详情+GitHub漏洞Wiki+完整POC利用代码(含reverse shell)+多平台修复公告+openEuler影响分析。比WebSearch更深入：含CWE分类(CWE-77/CWE-94)、完整漏洞复现步骤和exploit代码。耗时1959ms。"
         },
+        "web-search-prime": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 3,
+            "rationale": "10个结果与WebSearch高度重叠（安全客/腾讯云/阿里云/Grafana官方），进一步确认同引擎。内容质量一致但无Claude自动总结，Agent需自行解析原始JSON。"
+        },
         "Context7": {
             "relevance": 1,
             "completeness": 1,
@@ -401,6 +408,13 @@ def score_tc14():
             "accuracy": 4,
             "usability_for_agent": 3,
             "rationale": "返回Dify版本演进信息（0.15.3→v1.0.0→v1.2.0），但未直接返回0.15.0的Release Notes。信息是升级攻略视角而非原始release内容。部分请求遇到速率限制。Claude总结提供了版本升级路线图，但缺少0.15.0具体功能详情。"
+        },
+        "web-search-prime": {
+            "relevance": 2,
+            "completeness": 2,
+            "accuracy": 3,
+            "usability_for_agent": 2,
+            "rationale": "10个结果但相关性差——返回通用AI平台对比文章而非Dify 0.15.0具体版本信息。查询词'开源AI平台'匹配了太多无关内容。对比AnySearch直接返回GitHub Release Notes，精准度差距明显。"
         }
     }
     return scores

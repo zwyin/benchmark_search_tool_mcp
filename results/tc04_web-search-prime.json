@@ -1,0 +1,19 @@
+{
+  "test_case": "TC04",
+  "category": "vertical_domain",
+  "tool": "web-search-prime",
+  "query": "CVE-2024-9264 漏洞详情 Grafana",
+  "latency_ms": null,
+  "result_count": 10,
+  "sources": ["GitHub Vulnerability-Wiki", "腾讯云", "上海科技大学", "Tenable", "星图", "漏洞平台", "安全客", "阿里云", "iThome", "Grafana官方博客"],
+  "key_info": [
+    "CVE-2024-9264 CVSS 9.9严重级别，Grafana 11.0.0-11.2.1受影响",
+    "DuckDB SQL注入导致命令执行和本地文件包含",
+    "影响范围：OSS和Enterprise 11.0.x/11.1.x/11.2.x",
+    "修复版本已发布",
+    "POC利用代码已公开"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "web-search-prime返回10个结果，来源与WebSearch高度重叠（安全客/腾讯云/阿里云/Grafana官方）。内容质量与WebSearch几乎相同，进一步确认同引擎假设。无Claude自动总结，需Agent自行解析。location=cn返回中文安全社区内容为主。"
+}

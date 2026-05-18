@@ -1,0 +1,18 @@
+{
+  "test_case": "TC14",
+  "category": "domestic_ecosystem",
+  "tool": "web-search-prime",
+  "query": "Dify 0.15 新功能 开源AI平台",
+  "latency_ms": null,
+  "result_count": 10,
+  "sources": ["OSCHINA", "掘金", "阿里云", "CSDN", "知乎", "phodal.com"],
+  "key_info": [
+    "7款开源AI平台对比（掘金）",
+    "Dify平台AI安全护栏集成（阿里云）",
+    "AI智能体开发框架7大对比（CSDN）",
+    "未返回Dify 0.15.0具体版本Release Notes"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "web-search-prime(location=cn)返回10个结果但相关性差——返回了通用AI平台对比文章而非Dify 0.15.0具体版本信息。查询词可能过于宽泛（'开源AI平台'匹配了太多通用内容）。对比AnySearch直接返回GitHub Release Notes全文，搜索精准度差距明显。"
+}
