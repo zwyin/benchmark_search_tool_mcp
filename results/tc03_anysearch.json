@@ -1,0 +1,19 @@
+{
+  "test_case": "TC03",
+  "category": "github_opensource",
+  "tool": "AnySearch",
+  "query": "Claude Code plugin development MCP skills tutorial 2025 2026",
+  "latency_ms": 1543,
+  "result_count": 5,
+  "sources": ["genaiunplugged.substack.com", "claudelab.net", "morphllm.com", "code.claude.com (官方)", "codingnomads.com"],
+  "key_info": [
+    "Plugin结构：.claude-plugin/plugin.json + skills/agents/hooks/mcp/",
+    "5种组件：Skills/MCP Servers/Hooks/Agents/LSP Servers",
+    "plugin.json是唯一必须文件，name字段驱动命名空间",
+    "MCP Tool Search实现lazy loading减少95%上下文使用",
+    "安装：claude plugin install，测试：--plugin-dir + /reload-plugins"
+  ],
+  "has_code_examples": true,
+  "code_snippets_count": 5,
+  "notes": "AnySearch返回5个高质量英文结果，包含官方文档(code.claude.com)和详细教程。延迟1543ms。信息全面覆盖plugin结构/组件类型/安装测试/MCP集成。对比WebSearch(cn定位)只返回中文入门教程，AnySearch的英文结果质量显著更高，包含MCP Tool Search等最新特性。"
+}

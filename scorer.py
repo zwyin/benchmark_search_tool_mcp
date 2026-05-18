@@ -121,6 +121,13 @@ def score_tc03():
             "accuracy": 5,
             "usability_for_agent": 4,
             "rationale": "location=us返回code.claude.com官方文档+DEV Community+GitHub等高质量英文源。覆盖SKILL.md创建/MCP与Skill选择/测试分享流程。官方链接直接可访问。英文技术内容搜索明显优于cn定位。"
+        },
+        "AnySearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 4,
+            "rationale": "5个高质量英文结果含官方文档(code.claude.com)+详细教程。延迟1543ms。覆盖plugin.json结构/5种组件/Skills/MCP Tool Search lazy loading/--plugin-dir测试。信息全面性优于WebSearch(cn)和web-search-prime(us)。含5个代码示例（plugin.json/SKILL.md/MCP配置）。"
         }
     }
     return scores
@@ -359,6 +366,13 @@ def score_tc13():
             "accuracy": 5,
             "usability_for_agent": 4,
             "rationale": "10个高质量结果覆盖DRF官方文档+Stack Overflow+社区教程。Claude自动生成4种验证方式对比表格（field-level/object-level/validator function/validator class）。信息全面但缺少直接可粘贴的代码示例——提供概念理解而非直接代码。对比Context7的纯代码输出，WebSearch更适合学习理解，Context7更适合直接编写代码。"
+        },
+        "AnySearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 4,
+            "rationale": "5个结果含8个代码示例，覆盖字段级/对象级/函数式/类验证器4种方式+required=False行为+Meta.validators。延迟1210ms。信息全面性最高（SO回答+DRF官方文档混合）。对比Context7的零噪音代码和WebSearch的概念表格，AnySearch在代码量和解释深度上取得平衡。"
         }
     }
     return scores

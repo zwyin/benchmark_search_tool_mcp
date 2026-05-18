@@ -1,0 +1,20 @@
+{
+  "test_case": "TC13",
+  "category": "code_doc_deep",
+  "tool": "AnySearch",
+  "query": "Django REST Framework serializer custom validator validate field",
+  "latency_ms": 1210,
+  "result_count": 5,
+  "sources": ["Stack Overflow (3个)", "DRF官方文档 (django-rest-framework.org)"],
+  "key_info": [
+    "字段级验证：validate_<fieldname>(self, value)方法",
+    "对象级验证：validate(self, attrs)方法做跨字段检查",
+    "函数式验证器：可调用对象+ValidationError",
+    "类验证器：__call__方法+requires_context=True",
+    "required=False时跳过字段验证",
+    "Meta.validators=[...]可添加对象级验证器"
+  ],
+  "has_code_examples": true,
+  "code_snippets_count": 8,
+  "notes": "AnySearch返回5个结果含8个代码示例，覆盖字段级/对象级/函数式/类验证器4种方式。延迟1210ms。Stack Overflow回答结合DRF官方文档，信息全面。对比Context7只返回官方代码片段（零噪音但无解释），WebSearch返回概念总结+对比表格。AnySearch在信息量和代码示例数量上最优。"
+}
