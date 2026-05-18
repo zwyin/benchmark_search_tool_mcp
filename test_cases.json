@@ -18,7 +18,11 @@
       "description": "国内时事 - Agent 研究行业动态时典型搜索",
       "query": "2026年5月中国AI大模型最新政策动态",
       "expected_content": "政策名称、发布机构、关键条款、时间线",
-      "applicable_tools": ["WebSearch", "web-search-prime", "AnySearch"]
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "AnySearch"
+      ]
     },
     {
       "id": "TC02",
@@ -26,7 +30,11 @@
       "description": "技术文档 - Agent 写代码时查文档",
       "query": "Next.js App Router middleware 配置方法",
       "expected_content": "middleware.ts 写法、matcher 配置、常见用法",
-      "applicable_tools": ["WebSearch", "web-search-prime", "Context7"]
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "Context7"
+      ]
     },
     {
       "id": "TC03",
@@ -34,7 +42,10 @@
       "description": "GitHub/开源 - Agent 调研工具和技术选型",
       "query": "Claude Code plugin development tutorial 2026",
       "expected_content": "plugin 结构、skill 写法、MCP 集成方式",
-      "applicable_tools": ["WebSearch", "web-search-prime"]
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime"
+      ]
     },
     {
       "id": "TC04",
@@ -42,7 +53,11 @@
       "description": "垂直领域 - CVE 漏洞查询",
       "query": "CVE-2024-9264 漏洞详情和影响范围",
       "expected_content": "漏洞描述、影响版本、CVSS 评分、修复方案",
-      "applicable_tools": ["WebSearch", "web-search-prime", "AnySearch"]
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "AnySearch"
+      ]
     },
     {
       "id": "TC05",
@@ -50,7 +65,11 @@
       "description": "行业研究 - Agent 做行业分析报告",
       "query": "2026年中国AI编程工具市场对比 Claude Code vs Cursor vs Copilot",
       "expected_content": "功能对比、定价、用户评价、市场份额",
-      "applicable_tools": ["WebSearch", "web-search-prime", "AnySearch"]
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "AnySearch"
+      ]
     },
     {
       "id": "TC06",
@@ -58,7 +77,11 @@
       "description": "代码调试 - Agent 查报错解决方案",
       "query": "Python RuntimeError: can't start new thread 解决方案",
       "expected_content": "原因分析、多种解决方案、预防措施",
-      "applicable_tools": ["WebSearch", "web-search-prime", "Context7"]
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "Context7"
+      ]
     },
     {
       "id": "TC07",
@@ -66,7 +89,11 @@
       "description": "国内技术圈 - Agent 追踪国产技术动态",
       "query": "智谱GLM-5模型最新能力和API调用方法",
       "expected_content": "模型参数、能力对比、API 文档链接、调用示例",
-      "applicable_tools": ["WebSearch", "web-search-prime", "AnySearch"]
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "AnySearch"
+      ]
     },
     {
       "id": "TC08",
@@ -74,7 +101,94 @@
       "description": "URL 提取 - Agent 读取具体网页内容",
       "query": "https://docs.anthropic.com/en/docs/claude-code/overview",
       "expected_content": "Claude Code 概述、核心功能、安装方法",
-      "applicable_tools": ["web-reader"]
+      "applicable_tools": [
+        "web-reader"
+      ]
+    },
+    {
+      "id": "TC09",
+      "category": "english_tech",
+      "description": "英文技术搜索 - 验证 location 参数效果对比",
+      "query": "Rust async runtime tokio vs async-std comparison 2025",
+      "expected_content": "性能对比、特性差异、社区活跃度、适用场景",
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "AnySearch"
+      ]
+    },
+    {
+      "id": "TC10",
+      "category": "multilingual",
+      "description": "多语言查询 - 同一意图中英混合",
+      "query": "Kubernetes HPA horizontal pod autoscaler 配置教程",
+      "expected_content": "HPA配置YAML、metrics类型、缩放策略、自定义指标",
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "Context7",
+        "AnySearch"
+      ]
+    },
+    {
+      "id": "TC11",
+      "category": "realtime_data",
+      "description": "实时数据 - 验证时效性",
+      "query": "2026年5月中国新能源汽车销量排行榜",
+      "expected_content": "品牌排名、销量数据、同比增长、市场份额",
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "AnySearch"
+      ]
+    },
+    {
+      "id": "TC12",
+      "category": "academic_search",
+      "description": "学术搜索 - 论文检索场景",
+      "query": "transformer attention mechanism survey 2025",
+      "expected_content": "综述论文、主要变体、性能对比、应用领域",
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "AnySearch"
+      ]
+    },
+    {
+      "id": "TC13",
+      "category": "code_doc_deep",
+      "description": "深度代码文档 - Context7 对比",
+      "query": "Django REST Framework serializer validation custom validator",
+      "expected_content": "自定义验证器写法、Field-level validation、validator装饰器、错误消息",
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "Context7"
+      ]
+    },
+    {
+      "id": "TC14",
+      "category": "domestic_ecosystem",
+      "description": "国内生态 - 开源工具追踪",
+      "query": "Dify 0.15 最新功能更新和Agent工作流改进",
+      "expected_content": "版本更新内容、Agent工作流改进、新组件、breaking changes",
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "AnySearch"
+      ]
+    },
+    {
+      "id": "TC15",
+      "category": "finance_vertical",
+      "description": "金融垂直 - AnySearch 独有能力",
+      "query": "AAPL",
+      "expected_content": "当前股价、市值、PE、52周高低、分析师评级",
+      "applicable_tools": [
+        "WebSearch",
+        "web-search-prime",
+        "AnySearch"
+      ]
     }
   ],
   "scoring_rubric": {

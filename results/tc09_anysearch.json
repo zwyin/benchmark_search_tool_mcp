@@ -1,0 +1,11 @@
+{
+  "test_case": "TC09",
+  "category": "english_tech",
+  "tool": "AnySearch",
+  "query": "Rust async runtime tokio vs async-std comparison 2025",
+  "latency_ms": 2415,
+  "result_count": 5,
+  "sources": ["DEV Community", "技术博客"],
+  "key_info": ["Tokio vs async-std 2025对比", "性能和tradeoffs分析", "适用场景推荐"],
+  "notes": "成功返回英文技术内容，质量高。对比之前TC03的WebSearch(cn定位)效果显著提升。"
+}

@@ -1,0 +1,11 @@
+{
+  "test_case": "TC11",
+  "category": "realtime_data",
+  "tool": "AnySearch",
+  "query": "2026年5月中国新能源汽车销量排行榜",
+  "latency_ms": 2305,
+  "result_count": 5,
+  "sources": ["盖世汽车"],
+  "key_info": ["2026年4月新能源销量排行", "最新行业动态"],
+  "notes": "返回了2026年4月数据（5月数据尚未完全发布），时效性良好。盖世汽车是权威汽车数据源。"
+}

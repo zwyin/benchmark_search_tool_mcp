@@ -1,0 +1,20 @@
+{
+  "test_case": "TC13",
+  "category": "code_doc_deep",
+  "tool": "Context7",
+  "query": "Django REST Framework serializer validation custom validator",
+  "library_id": "/encode/django-rest-framework",
+  "latency_ms": null,
+  "result_count": 5,
+  "sources": ["DRF官方GitHub仓库"],
+  "key_info": [
+    "validate_<field_name>方法定义字段级验证",
+    "validate()方法做对象级跨字段验证",
+    "ValidationError({'field': 'msg'})指定字段错误",
+    "required=False时跳过验证",
+    "is_valid()调用后才能访问validated_data"
+  ],
+  "has_code_examples": true,
+  "code_snippets_count": 4,
+  "notes": "完美返回：字段级验证/对象级验证/错误消息关联/生命周期方法，全部带代码示例。Context7在编程文档场景再次证明优势。"
+}

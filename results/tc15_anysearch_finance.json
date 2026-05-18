@@ -1,0 +1,17 @@
+{
+  "test_case": "TC15",
+  "category": "finance_vertical",
+  "tool": "AnySearch",
+  "query": "AAPL",
+  "domain": "finance",
+  "sub_domain": "us_stock",
+  "latency_ms": 1311,
+  "result_count": 3,
+  "key_info": [
+    "AAPL: $295.81 (下跌1.47%)",
+    "日内高/低: $300.66/$294.91",
+    "EPS: 实际$2.01 vs 预期$1.99 (超预期1.09%)",
+    "分析师评级: StrongBuy=15, Buy=24, Hold=13, Sell=2"
+  ],
+  "notes": "返回结构化股票数据，包含实时价格、分析师评级、EPS等。这是WebSearch/Context7完全无法提供的独特能力。延迟1311ms。"
+}

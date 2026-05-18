@@ -1,0 +1,11 @@
+{
+  "test_case": "TC12",
+  "category": "academic_search",
+  "tool": "AnySearch",
+  "query": "transformer attention mechanism survey 2025",
+  "latency_ms": 2006,
+  "result_count": 5,
+  "sources": ["PubMed (NCBI)"],
+  "key_info": ["Geometrically aware transformer for point cloud analysis"],
+  "notes": "学术垂直搜索成功返回PubMed论文。搜索结果与query相关性一般（返回了点云分析而非attention综述），可能需要调整查询词。"
+}
