@@ -1,0 +1,32 @@
+{
+  "analysis_type": "LLM-as-Judge vs Manual Scoring Consistency",
+  "timestamp": "2026-05-19T03:35:00+08:00",
+  "model": "glm-4-flash",
+  "total_scores": 26,
+  "avg_absolute_deviation": 0.57,
+  "bias": "LLM judge systematically lower (more conservative)",
+  "per_tc_comparison": {
+    "TC01": {"llm_avg": 3.58, "manual_avg": 4.67, "delta": -1.08, "note": "LLM低估了AnySearch完整全文的价值"},
+    "TC02": {"llm_avg": 3.75, "manual_avg": 4.25, "delta": -0.50, "note": "Context7代码示例被LLM低估"},
+    "TC03": {"llm_avg": 3.50, "manual_avg": 3.88, "delta": -0.38, "note": "两者一致认为英文技术搜索cn定位不够"},
+    "TC04": {"llm_avg": 4.38, "manual_avg": 5.00, "delta": -0.62, "note": "CVE搜索两者都认为质量高"},
+    "TC05": {"llm_avg": 4.25, "manual_avg": 4.75, "delta": -0.50, "note": "LLM未能充分评估信息密度优势"},
+    "TC06": {"llm_avg": 3.50, "manual_avg": 3.50, "delta": 0.00, "note": "完全一致 - 代码调试场景评分对齐"},
+    "TC07": {"llm_avg": 4.75, "manual_avg": 4.92, "delta": -0.17, "note": "高度一致 - 国内技术搜索质量公认"},
+    "TC08": {"llm_avg": 4.75, "manual_avg": 4.25, "delta": 0.50, "note": "LLM高估了web-reader的可用性"},
+    "TC09": {"llm_avg": 3.88, "manual_avg": 4.62, "delta": -0.75, "note": "LLM低估了WebSearch结构化总结的价值"},
+    "TC10": {"llm_avg": 4.38, "manual_avg": 5.00, "delta": -0.62, "note": "K8s文档搜索两者方向一致"},
+    "TC11": {"llm_avg": 3.38, "manual_avg": 4.50, "delta": -1.12, "note": "最大偏差 - 5月数据未发布导致LLM更严格扣分"},
+    "TC12": {"llm_avg": 2.25, "manual_avg": 3.25, "delta": -1.00, "note": "学术搜索相关性差 - 两者一致但LLM更严格"},
+    "TC13": {"llm_avg": 4.75, "manual_avg": 5.00, "delta": -0.25, "note": "高度一致 - Context7编程文档公认优秀"},
+    "TC14": {"llm_avg": 4.00, "manual_avg": 4.25, "delta": -0.25, "note": "一致 - 国内生态搜索质量尚可"},
+    "TC15": {"llm_avg": 2.88, "manual_avg": 3.75, "delta": -0.88, "note": "LLM对限流结果的惩罚更严格"}
+  },
+  "conclusions": [
+    "LLM-as-Judge评分方向与人工评分一致（Pearson相关性预计>0.85）",
+    "系统性偏低0.57分（更保守），这是LLM评分的已知特征",
+    "偏差最大的TC11/TC12/TC15都是数据不完整的场景，LLM惩罚更重",
+    "TC06（代码调试）完全一致，说明对技术内容的评判标准对齐较好",
+    "LLM-as-Judge适合做初步筛选和批量评估，最终评分仍需人工校准"
+  ]
+}

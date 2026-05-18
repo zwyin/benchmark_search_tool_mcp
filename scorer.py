@@ -785,8 +785,13 @@ def llm_judge_score(query, expected_content, search_results_text):
         result = json.loads(resp.read().decode())
         content = result["choices"][0]["message"]["content"]
 
-        # 解析 JSON 评分
-        scores = json.loads(content)
+        # 解析 JSON 评分 - 容错处理 markdown 代码块包裹
+        import re
+        json_match = re.search(r'\{[^{}]*"relevance"[^{}]*\}', content, re.DOTALL)
+        if json_match:
+            scores = json.loads(json_match.group())
+        else:
+            scores = json.loads(content)
         return scores
     except Exception as e:
         print(f"LLM Judge 调用失败: {e}")
