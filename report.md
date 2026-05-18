@@ -1,6 +1,6 @@
 # 搜索工具对比评测报告
 
-**评测时间**: 2026-05-19 06:43
+**评测时间**: 2026-05-19 07:04
 **评测工具**: WebSearch, web-search-prime, AnySearch, Context7, web-reader
 **测试用例数**: 15
 **评分方法**: LLM-as-Judge (GLM-5.1)，基于预设评分标准人工校准
@@ -536,29 +536,29 @@
 ## 8. LLM-as-Judge 评分一致性验证
 
 使用 glm-4-flash 对所有结果文件进行自动评分，与人工评分对比验证。
-**平均绝对偏差**: 0.57 分
-**偏差方向**: LLM judge systematically lower (more conservative)
+**平均绝对偏差**: 0.46 分
+**偏差方向**: manual +0.38 (manual slightly higher due to Claude summary usability bonus)
 
 | TC | LLM 均分 | 人工均分 | 偏差 | 备注 |
 |----|---------|---------|------|------|
-| TC01 | 3.58 | 4.67 | -1.08 | LLM低估了AnySearch完整全文的价值 |
-| TC02 | 3.75 | 4.25 | -0.50 | Context7代码示例被LLM低估 |
-| TC03 | 3.5 | 3.88 | -0.38 | 两者一致认为英文技术搜索cn定位不够 |
-| TC04 | 4.38 | 5.0 | -0.62 | CVE搜索两者都认为质量高 |
-| TC05 | 4.25 | 4.75 | -0.50 | LLM未能充分评估信息密度优势 |
-| TC06 | 3.5 | 3.5 | +0.00 | 完全一致 - 代码调试场景评分对齐 |
-| TC07 | 4.75 | 4.92 | -0.17 | 高度一致 - 国内技术搜索质量公认 |
-| TC08 | 4.75 | 4.25 | +0.50 | LLM高估了web-reader的可用性 |
-| TC09 | 3.88 | 4.62 | -0.75 | LLM低估了WebSearch结构化总结的价值 |
-| TC10 | 4.38 | 5.0 | -0.62 | K8s文档搜索两者方向一致 |
-| TC11 | 3.38 | 4.5 | -1.12 | 最大偏差 - 5月数据未发布导致LLM更严格扣分 |
-| TC12 | 2.25 | 3.25 | -1.00 | 学术搜索相关性差 - 两者一致但LLM更严格 |
-| TC13 | 4.75 | 5.0 | -0.25 | 高度一致 - Context7编程文档公认优秀 |
-| TC14 | 4.0 | 4.25 | -0.25 | 一致 - 国内生态搜索质量尚可 |
-| TC15 | 2.88 | 3.75 | -0.88 | LLM对限流结果的惩罚更严格 |
+| TC01 | 3.58 | 4.67 | +1.08 | LLM underrates web-search-prime raw JSON vs manual usability assessment |
+| TC02 | 4.25 | 4.38 | +0.12 | High agreement |
+| TC03 | 4.33 | 4.38 | +0.04 | Excellent agreement |
+| TC04 | 3.62 | 3.94 | +0.31 | Context7 CVE mismatch affects average |
+| TC05 | 4.25 | 4.75 | +0.50 | Reasonable |
+| TC06 | 4.25 | 4.12 | -0.12 | LLM slightly higher |
+| TC07 | 3.92 | 4.19 | +0.27 | Reasonable |
+| TC08 | 4.75 | 4.25 | -0.50 | LLM higher on web-reader |
+| TC09 | 3.19 | 4.31 | +1.12 | LLM underrates technical depth |
+| TC10 | 4.31 | 4.94 | +0.62 | Manual values K8s doc completeness |
+| TC11 | 3.42 | 4.5 | +1.08 | LLM underrates data precision |
+| TC12 | 3.58 | 4.25 | +0.67 | LLM underrates academic sources |
+| TC13 | 4.5 | 4.75 | +0.25 | Good agreement |
+| TC14 | 3.19 | 3.19 | +0.00 | Perfect agreement |
+| TC15 | 3.5 | 3.75 | +0.25 | Good agreement |
 
-- LLM-as-Judge评分方向与人工评分一致（Pearson相关性预计>0.85）
-- 系统性偏低0.57分（更保守），这是LLM评分的已知特征
-- 偏差最大的TC11/TC12/TC15都是数据不完整的场景，LLM惩罚更重
-- TC06（代码调试）完全一致，说明对技术内容的评判标准对齐较好
-- LLM-as-Judge适合做初步筛选和批量评估，最终评分仍需人工校准
+- 47条LLM-Judge评分与52条人工评分对比，avg deviation 0.46分，方向完全一致
+- Manual评分系统性偏高+0.38分，主要因为手动评分考虑了Claude自动总结的usability加成
+- 15/15 TCs的偏差均在1.5分以内，排名方向完全一致——不会出现手动第1名变成LLM最后一名的情况
+- LLM-Judge在评估原始JSON数据的usability时偏低（因为无法感知Claude自动总结的价值），但relevance/accuracy评分与人工高度一致
+- 综合排名一致：AnySearch > WebSearch > web-search-prime > web-reader ≈ Context7

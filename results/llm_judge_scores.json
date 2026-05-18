@@ -13,7 +13,7 @@
     "completeness": 3,
     "accuracy": 3,
     "usability_for_agent": 2,
-    "rationale": "搜索结果与查询意图相关，但未完全覆盖所有期望内容，信息准确但需进一步处理。"
+    "rationale": "搜索结果与查询意图相关，但信息覆盖不完全，且需要进一步处理才能直接使用。"
   },
   {
     "tc": "TC01",
@@ -21,7 +21,7 @@
     "completeness": 3,
     "accuracy": 3,
     "usability_for_agent": 2,
-    "rationale": "搜索结果与查询意图相关，但未完全覆盖所有期望内容，部分信息需要进一步处理。"
+    "rationale": "搜索结果与查询意图相关，但未完全覆盖所有期望内容，信息准确但需进一步处理。"
   },
   {
     "tc": "TC02",
@@ -29,7 +29,7 @@
     "completeness": 4,
     "accuracy": 4,
     "usability_for_agent": 3,
-    "rationale": "搜索结果提供了丰富的信息，包括官方文档和社区内容，但缺少直接代码示例和中文解释。"
+    "rationale": "搜索结果提供了丰富的信息，包括官方文档和社区内容，但缺少直接代码示例和中文解释，对直接使用有一定限制。"
   },
   {
     "tc": "TC02",
@@ -37,7 +37,7 @@
     "completeness": 5,
     "accuracy": 5,
     "usability_for_agent": 4,
-    "rationale": "搜索结果高度相关，完整覆盖了期望内容，信息准确且来源可靠，代码示例丰富，但信息密度高可能需要进一步处理。"
+    "rationale": "搜索结果高度相关，完整覆盖了期望内容，信息准确且来源可靠，代码示例丰富，但信息密度较高可能需要进一步处理。"
   },
   {
     "tc": "TC03",
@@ -45,7 +45,7 @@
     "completeness": 3,
     "accuracy": 4,
     "usability_for_agent": 3,
-    "rationale": "搜索结果提供了相关文档和社区资源，但深度内容不足，且需进一步处理以获取具体开发细节。"
+    "rationale": "结果包含了一些关键信息，但深度内容不足，且大部分为入门级教程。"
   },
   {
     "tc": "TC03",
@@ -53,7 +53,15 @@
     "completeness": 5,
     "accuracy": 5,
     "usability_for_agent": 4,
-    "rationale": "搜索结果高度相关，全面覆盖了期望内容，信息准确且包含代码示例，对Agent直接使用程度高。"
+    "rationale": "搜索结果高度相关，全面覆盖了期望内容，信息准确且时效性强，对Agent直接使用程度高，但需注意英文内容对非英语用户可能存在障碍。"
+  },
+  {
+    "tc": "TC03",
+    "relevance": 5,
+    "completeness": 5,
+    "accuracy": 5,
+    "usability_for_agent": 4,
+    "rationale": "搜索结果高度相关，完整覆盖了期望内容，信息准确且直接可用，但需要一些处理才能完全用于Agent。"
   },
   {
     "tc": "TC04",
@@ -61,7 +69,7 @@
     "completeness": 4,
     "accuracy": 4,
     "usability_for_agent": 4,
-    "rationale": "搜索结果与查询意图高度相关，信息完整，准确且可直接使用，但需要进一步确认CVSS评分和修复方案的具体内容。"
+    "rationale": "搜索结果与查询意图高度相关，提供了详细的影响版本和CVSS评分，但未明确提及修复方案。"
   },
   {
     "tc": "TC04",
@@ -80,12 +88,20 @@
     "rationale": "搜索结果提供了CVE-2024-9264的相关信息，但未完全覆盖期望内容，且准确性有待验证。"
   },
   {
+    "tc": "TC04",
+    "relevance": 4,
+    "completeness": 4,
+    "accuracy": 4,
+    "usability_for_agent": 3,
+    "rationale": "搜索结果与查询意图高度相关，但部分信息需要进一步解析。"
+  },
+  {
     "tc": "TC05",
     "relevance": 4,
     "completeness": 4,
     "accuracy": 4,
     "usability_for_agent": 3,
-    "rationale": "搜索结果与查询意图高度相关，但部分信息需要人工总结，且未提供定价信息。"
+    "rationale": "搜索结果与查询意图高度相关，但部分信息需要人工总结，数据来源明确。"
   },
   {
     "tc": "TC05",
@@ -97,11 +113,11 @@
   },
   {
     "tc": "TC06",
-    "relevance": 4,
-    "completeness": 4,
+    "relevance": 5,
+    "completeness": 5,
     "accuracy": 4,
     "usability_for_agent": 4,
-    "rationale": "搜索结果提供了与查询高度相关的原因分析和多种解决方案，但预防措施部分未明确提及。"
+    "rationale": "搜索结果提供了高度相关的信息，涵盖了原因分析、多种解决方案和预防措施，信息准确且来源可靠，但直接可用性稍逊色，需要一些处理。"
   },
   {
     "tc": "TC06",
@@ -120,12 +136,20 @@
     "rationale": "结果提供了部分原因分析和解决方案，但未完全覆盖期望内容，且对Agent的直接使用性有限。"
   },
   {
+    "tc": "TC06",
+    "relevance": 5,
+    "completeness": 5,
+    "accuracy": 5,
+    "usability_for_agent": 4,
+    "rationale": "搜索结果高度相关，完整覆盖了期望内容，信息准确且有来源，对Agent直接使用程度高。"
+  },
+  {
     "tc": "TC07",
     "relevance": 5,
     "completeness": 5,
     "accuracy": 5,
     "usability_for_agent": 4,
-    "rationale": "搜索结果高度相关，信息完整，准确且直接可用，但需进一步处理以完全符合Agent使用。"
+    "rationale": "搜索结果高度相关，完整覆盖了期望内容，信息准确且时效性强，对Agent直接使用程度高，但需进一步处理链接。"
   },
   {
     "tc": "TC07",
@@ -169,19 +193,27 @@
   },
   {
     "tc": "TC09",
+    "relevance": 2,
+    "completeness": 3,
+    "accuracy": 3,
+    "usability_for_agent": 2,
+    "rationale": "搜索结果与查询意图相关，但未完全覆盖所有期望内容，且部分信息可能过时。"
+  },
+  {
+    "tc": "TC09",
     "relevance": 4,
     "completeness": 4,
     "accuracy": 4,
     "usability_for_agent": 4,
-    "rationale": "搜索结果提供了丰富的信息，与查询意图高度相关，但部分信息需要进一步验证。"
+    "rationale": "搜索结果提供了丰富的信息，但部分信息点如社区活跃度未明确提及。"
   },
   {
     "tc": "TC10",
     "relevance": 4,
-    "completeness": 5,
-    "accuracy": 5,
+    "completeness": 4,
+    "accuracy": 4,
     "usability_for_agent": 4,
-    "rationale": "搜索结果高度相关，覆盖了所有期望内容，信息准确且包含代码示例，但需要一些处理才能直接使用。"
+    "rationale": "搜索结果与查询意图高度相关，覆盖了大部分期望内容，信息准确且包含代码示例，但部分内容需要进一步处理。"
   },
   {
     "tc": "TC10",
@@ -189,7 +221,23 @@
     "completeness": 5,
     "accuracy": 5,
     "usability_for_agent": 4,
-    "rationale": "搜索结果直接来源于官方文档，内容精准且全面，代码示例质量高，对Agent直接使用友好。"
+    "rationale": "搜索结果直接来源于官方文档，内容精确且全面，代码示例质量高，对Agent直接使用友好。"
+  },
+  {
+    "tc": "TC10",
+    "relevance": 5,
+    "completeness": 5,
+    "accuracy": 5,
+    "usability_for_agent": 4,
+    "rationale": "搜索结果高度相关，覆盖了所有期望内容，信息准确且来源可靠，但缺少代码示例，对直接使用有一定限制。"
+  },
+  {
+    "tc": "TC10",
+    "relevance": 4,
+    "completeness": 4,
+    "accuracy": 4,
+    "usability_for_agent": 3,
+    "rationale": "结果相关性强，覆盖了大部分期望内容，但部分信息需要进一步处理。"
   },
   {
     "tc": "TC11",
@@ -203,9 +251,17 @@
     "tc": "TC11",
     "relevance": 4,
     "completeness": 3,
+    "accuracy": 4,
+    "usability_for_agent": 3,
+    "rationale": "结果与查询意图相关，但未完全覆盖所有期望内容，部分数据准确且有来源，但时效性未知。"
+  },
+  {
+    "tc": "TC11",
+    "relevance": 4,
+    "completeness": 3,
     "accuracy": 3,
     "usability_for_agent": 3,
-    "rationale": "结果提供了相关数据，但未完全覆盖所有期望内容，且数据未发布。"
+    "rationale": "结果提供了部分期望信息，但5月数据尚未发布，且未提供完整的市场份额数据。"
   },
   {
     "tc": "TC12",
@@ -214,6 +270,14 @@
     "accuracy": 3,
     "usability_for_agent": 2,
     "rationale": "搜索结果与查询意图相关性一般，未完全覆盖期望内容，信息准确但需进一步调整查询词。"
+  },
+  {
+    "tc": "TC12",
+    "relevance": 4,
+    "completeness": 4,
+    "accuracy": 4,
+    "usability_for_agent": 3,
+    "rationale": "搜索结果包含相关论文和综述，但部分信息可能需要进一步处理。"
   },
   {
     "tc": "TC12",
@@ -229,7 +293,7 @@
     "completeness": 5,
     "accuracy": 5,
     "usability_for_agent": 4,
-    "rationale": "搜索结果高度相关，全面覆盖了期望内容，信息准确，且代码示例丰富，对Agent直接使用友好。"
+    "rationale": "搜索结果高度相关，全面覆盖了期望内容，信息准确，且包含大量代码示例，对Agent直接使用友好。"
   },
   {
     "tc": "TC13",
@@ -238,6 +302,14 @@
     "accuracy": 5,
     "usability_for_agent": 4,
     "rationale": "搜索结果提供了高度相关的代码示例和详细说明，完全符合查询意图。"
+  },
+  {
+    "tc": "TC13",
+    "relevance": 4,
+    "completeness": 4,
+    "accuracy": 4,
+    "usability_for_agent": 3,
+    "rationale": "搜索结果涵盖了自定义验证器的主要方面，但缺少代码示例，且需要进一步处理以直接使用。"
   },
   {
     "tc": "TC13",
@@ -257,6 +329,22 @@
   },
   {
     "tc": "TC14",
+    "relevance": 3,
+    "completeness": 3,
+    "accuracy": 3,
+    "usability_for_agent": 2,
+    "rationale": "结果提供了部分相关API信息，但未提供完整的版本更新和Release Notes。"
+  },
+  {
+    "tc": "TC14",
+    "relevance": 2,
+    "completeness": 2,
+    "accuracy": 3,
+    "usability_for_agent": 1,
+    "rationale": "搜索结果相关性较差，未提供Dify 0.15的具体更新信息，但包含了相关AI平台的信息。"
+  },
+  {
+    "tc": "TC14",
     "relevance": 4,
     "completeness": 4,
     "accuracy": 4,
@@ -269,7 +357,15 @@
     "completeness": 5,
     "accuracy": 5,
     "usability_for_agent": 4,
-    "rationale": "搜索结果完全符合查询意图，提供了所有期望的关键信息，信息准确且时效性强，对Agent直接使用程度高。"
+    "rationale": "搜索结果完全符合查询意图，提供了所有期望的关键信息，信息准确且直接可用，但需要少量格式转换。"
+  },
+  {
+    "tc": "TC15",
+    "relevance": 5,
+    "completeness": 5,
+    "accuracy": 5,
+    "usability_for_agent": 4,
+    "rationale": "搜索结果高度相关，完整覆盖了期望内容，信息准确且有来源，对Agent直接使用程度高。"
   },
   {
     "tc": "TC15",
@@ -277,6 +373,6 @@
     "completeness": 1,
     "accuracy": 1,
     "usability_for_agent": 1,
-    "rationale": "虽然未能返回数据，但指出了工具的限制和金融垂直搜索的独特价值。"
+    "rationale": "搜索结果虽然未能返回数据，但准确指出了工具的限制，与查询意图高度相关。"
   }
 ]
