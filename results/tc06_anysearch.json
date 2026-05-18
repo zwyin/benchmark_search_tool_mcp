@@ -1,0 +1,19 @@
+{
+  "test_case": "TC06",
+  "category": "code_debug",
+  "tool": "AnySearch",
+  "query": "Python RuntimeError can't start new thread 解决方案 线程上限",
+  "latency_ms": 976,
+  "result_count": 5,
+  "sources": ["Stack Overflow (3个问题)", "CSDN问答 (2个)"],
+  "key_info": [
+    "根因：OS线程数限制（Linux ulimit -u / threads-max），非Python本身问题",
+    "Docker环境：seccomp profile不支持glibc 2.34的clone()，需升级Docker到20.10.7+",
+    "pip安装触发：pip默认启用多线程，解决方案pip install --no-threading或--progress-bar off",
+    "线程池替代：使用ThreadPoolExecutor(max_workers=N)避免无限创建线程",
+    "系统级方案：ulimit -u 4096临时提升，/etc/security/limits.conf永久修改"
+  ],
+  "has_code_examples": true,
+  "code_snippets_count": 5,
+  "notes": "AnySearch返回5个Stack Overflow和CSDN结果，覆盖普通Python/Docker/pip安装三种场景。延迟仅976ms。信息深度高：含Docker seccomp根因分析、线程池代码示例、系统调优命令、诊断流程图。对比web-search-prime(TC06)的10个结果，AnySearch信息密度更高但覆盖场景类似。"
+}

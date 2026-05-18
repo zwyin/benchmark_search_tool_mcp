@@ -1,0 +1,19 @@
+{
+  "test_case": "TC02",
+  "category": "tech_doc",
+  "tool": "AnySearch",
+  "query": "Next.js App Router middleware 配置方法 matcher",
+  "latency_ms": 1125,
+  "result_count": 5,
+  "sources": ["nextjs.org (官方文档)", "authgear.com", "oneuptime.com", "nextjs.im (中文文档)", "note.bingkele.cc (中文文档)"],
+  "key_info": [
+    "middleware.ts文件定义中间件，使用matcher配置目标路径",
+    "matcher支持字符串/数组/正则/对象（source+has+missing）",
+    "负向前瞻排除静态文件：/((?!_next/static|_next/image|favicon.ico).*)",
+    "Next.js 15.2+支持runtime:'nodejs'配置（绕过Edge Runtime限制）",
+    "中间件已重命名为proxy（Next.js最新版本）"
+  ],
+  "has_code_examples": true,
+  "code_snippets_count": 10,
+  "notes": "AnySearch返回5个结果包含大量完整代码示例。信息覆盖官方英文文档+认证教程+中文文档。延迟仅1125ms（最快的查询之一）。代码示例数量(10个)远超Context7(5个)和WebSearch(0个直接代码)。但信息密度过高导致token消耗大。middleware→proxy重命名信息是重要发现。"
+}

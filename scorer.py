@@ -93,6 +93,13 @@ def score_tc02():
             "accuracy": 5,
             "usability_for_agent": 5,
             "rationale": "直接返回Next.js官方GitHub仓库的代码片段：matcher配置对象/负向前瞻正则/has-missing条件/locale设置。零噪音，5个代码示例全部直接可用。Agent写代码时最佳选择。"
+        },
+        "AnySearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 4,
+            "rationale": "5个结果含10个代码示例，覆盖官方英文文档+认证教程+中文文档。延迟仅1125ms。信息密度最高（包含middleware→proxy重命名等最新信息）。但输出量大导致token消耗高，Agent需筛选才能直接使用。"
         }
     }
     return scores
@@ -184,6 +191,13 @@ def score_tc06():
             "accuracy": 4,
             "usability_for_agent": 2,
             "rationale": "返回Python官方threading文档，但聚焦在死锁场景和start()重复调用，未直接回答'can't start new thread'的系统线程数上限问题。说明Context7适合查API用法，不适合排查OS级运行时错误。代码调试场景搜索工具更优。"
+        },
+        "AnySearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 4,
+            "rationale": "5个Stack Overflow+CSDN结果，覆盖普通Python/Docker/pip安装三种场景。延迟仅976ms。信息深度高：含Docker seccomp根因分析(glibc 2.34兼容性)、线程池代码示例、系统调优命令、诊断流程图。对比web-search-prime信息密度更高但场景覆盖类似。"
         }
     }
     return scores
