@@ -48,11 +48,11 @@ python run_benchmark.py full
 
 | 排名 | 工具 | 综合均分 | 参与测试数 |
 |------|------|----------|-----------|
-| 1 | AnySearch | 4.67 | 10 |
+| 1 | AnySearch | 4.69 | 12 |
 | 2 | web-search-prime | 4.38 | 6 |
-| 3 | Context7 | 4.38 | 5 |
-| 4 | WebSearch | 4.35 | 12 |
-| 5 | web-reader | 4.25 | 1 |
+| 3 | WebSearch | 4.35 | 12 |
+| 4 | web-reader | 4.25 | 1 |
+| 5 | Context7 | 3.83 | 6 |
 
 ## 三句话决策规则
 
@@ -64,4 +64,4 @@ python run_benchmark.py full
 
 15 个类别：国内新闻、技术文档、开源社区、垂直领域、行业研究、代码调试、国内技术、URL提取、英文技术、多语言查询、实时数据、学术搜索、深度代码文档、国内生态、金融垂直。
 
-35 个工具-TC 组合，4 维度评分（relevance/completeness/accuracy/usability_for_agent），LLM-as-Judge 验证一致。
+37 个工具-TC 组合，4 维度评分（relevance/completeness/accuracy/usability_for_agent），LLM-as-Judge 验证一致。
