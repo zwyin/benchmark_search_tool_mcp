@@ -324,6 +324,13 @@ def score_tc13():
             "accuracy": 5,
             "usability_for_agent": 5,
             "rationale": "完美返回5个关键知识点：validate_<field_name>字段级验证、validate()对象级跨字段验证、ValidationError字段错误关联、required=False跳过验证、is_valid()后才能访问validated_data。全部带代码示例（4个snippets），Context7在编程文档场景再次证明绝对优势。"
+        },
+        "WebSearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 4,
+            "rationale": "10个高质量结果覆盖DRF官方文档+Stack Overflow+社区教程。Claude自动生成4种验证方式对比表格（field-level/object-level/validator function/validator class）。信息全面但缺少直接可粘贴的代码示例——提供概念理解而非直接代码。对比Context7的纯代码输出，WebSearch更适合学习理解，Context7更适合直接编写代码。"
         }
     }
     return scores

@@ -1,0 +1,21 @@
+{
+  "test_case": "TC13",
+  "category": "code_doc_deep",
+  "tool": "WebSearch",
+  "query": "Django REST Framework serializer validation custom validator",
+  "latency_ms": null,
+  "result_count": 10,
+  "sources": ["DRF官方文档 (django-rest-framework.org)", "Stack Overflow", "Django Forum", "Reddit r/django", "Medium", "YouTube", "TestDriven.io", "dev.to", "Unwired Learning"],
+  "key_info": [
+    "字段级验证: validate_<field_name>方法",
+    "对象级验证: validate()方法做跨字段检查",
+    "自定义验证函数: 独立函数传给validators=[...]",
+    "自定义验证类: __call__方法+Meta validators",
+    "UniqueValidator/UniqueTogetherValidator内置验证器",
+    "validate()中返回ValidationError({'field': 'msg'})关联字段错误",
+    "Claude自动生成4种验证方式对比表格"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "WebSearch返回10个高质量结果，覆盖DRF官方文档+Stack Overflow+社区教程。Claude自动生成4种验证方式对比表格。信息质量与Context7相当但形式不同：WebSearch提供概念总结+对比表格（适合理解），Context7提供直接代码示例（适合编写）。两者互补。"
+}
