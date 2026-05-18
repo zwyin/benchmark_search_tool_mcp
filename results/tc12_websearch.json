@@ -1,0 +1,20 @@
+{
+  "test_case": "TC12",
+  "category": "academic_search",
+  "tool": "WebSearch",
+  "query": "transformer attention mechanism survey 2025",
+  "latency_ms": null,
+  "result_count": 8,
+  "sources": ["arxiv.org", "Shahrood University (PDF)", "Medium (Foundation Models)", "Zenodo/ResearchGate", "YouTube", "Towards AI", "OpenReview", "Reddit"],
+  "key_info": [
+    "Efficient Attention Mechanisms for LLMs: A Survey (arxiv 2507.19595) - 聚焦二次时间/内存复杂度问题",
+    "Attention Mechanisms in Transformers: A General Survey - 覆盖注意力机制演进和设计变体",
+    "高级注意力机制综述：稀疏性/近似/哈希等效率优化技巧",
+    "Selective Attention: 无参数的标准注意力改进方法 (OpenReview)",
+    "Transformer vs 替代架构(Mamba/SSM)的社区讨论",
+    "Claude自动总结：高效注意力是2025年主要研究方向"
+  ],
+  "has_code_examples": false,
+  "code_snippets_count": 0,
+  "notes": "WebSearch(us)返回8个高质量学术结果，覆盖arxiv论文/综述PDF/技术博客/视频/社区讨论。信息来源权威(arxiv/OpenReview/ResearchGate)。Claude自动总结提供关键趋势洞察。对比AnySearch返回PubMed点云分析论文（相关性差），WebSearch在学术综述搜索中显著更优——查询匹配精准度高。"
+}

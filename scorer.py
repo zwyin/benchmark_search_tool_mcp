@@ -303,6 +303,13 @@ def score_tc12():
             "accuracy": 4,
             "usability_for_agent": 3,
             "rationale": "成功返回PubMed论文结果，但搜索结果与query相关性一般——返回了点云分析的Geometrically aware transformer而非attention机制综述。说明学术垂直搜索的查询匹配精度还需优化。延迟2006ms。"
+        },
+        "WebSearch": {
+            "relevance": 5,
+            "completeness": 5,
+            "accuracy": 5,
+            "usability_for_agent": 5,
+            "rationale": "8个高质量学术结果，覆盖arxiv综述(arxiv 2507.19595)/通用注意力调查PDF/高级注意力技术博客/OpenReview论文/社区讨论。Claude自动总结提供关键趋势：高效注意力/稀疏注意力/选择性注意力/Mamba替代架构。查询匹配精准度远高于AnySearch学术垂直搜索。"
         }
     }
     return scores
@@ -700,6 +707,33 @@ def generate_report(tool_scores, test_cases):
                 lines.append(f"- {s['rationale']}")
                 lines.append("")
         lines.append("---")
+        lines.append("")
+
+    # === LLM-as-Judge Consistency Analysis ===
+    consistency_file = RESULTS_DIR / "scoring_consistency.json"
+    if consistency_file.exists():
+        with open(consistency_file) as f:
+            consistency = json.load(f)
+
+        lines.append("## 8. LLM-as-Judge 评分一致性验证")
+        lines.append("")
+        lines.append(f"使用 {consistency.get('model', 'glm-4-flash')} 对所有结果文件进行自动评分，与人工评分对比验证。")
+        lines.append(f"**平均绝对偏差**: {consistency.get('avg_absolute_deviation', 'N/A')} 分")
+        lines.append(f"**偏差方向**: {consistency.get('bias', 'N/A')}")
+        lines.append("")
+
+        per_tc = consistency.get("per_tc_comparison", {})
+        if per_tc:
+            lines.append("| TC | LLM 均分 | 人工均分 | 偏差 | 备注 |")
+            lines.append("|----|---------|---------|------|------|")
+            for tc_id in sorted(per_tc.keys()):
+                d = per_tc[tc_id]
+                delta = d.get("delta", 0)
+                lines.append(f"| {tc_id} | {d.get('llm_avg', '-')} | {d.get('manual_avg', '-')} | {delta:+.2f} | {d.get('note', '')} |")
+            lines.append("")
+
+        for conclusion in consistency.get("conclusions", []):
+            lines.append(f"- {conclusion}")
         lines.append("")
 
     return "\n".join(lines)
