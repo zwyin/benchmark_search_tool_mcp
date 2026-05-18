@@ -1,0 +1,24 @@
+{
+  "test_case": "TC07",
+  "category": "domestic_tech",
+  "tool": "AnySearch",
+  "query": "智谱GLM-5模型最新能力和API调用方法",
+  "result_count": 10,
+  "latency_ms": 1680,
+  "sources": ["glm-5.org", "API易文档", "CSDN", "知乎", "独立博客"],
+  "key_info": [
+    "GLM-5: 7450亿总参数/440亿激活参数，MoE架构256专家激活8个",
+    "DeepSeek稀疏注意力(DSA)，最高200K token上下文",
+    "全程华为昇腾+MindSpore训练，硬件完全独立",
+    "GLM-5.1: 开源最强编程Agent模型，8小时长程自主工作",
+    "API平台：Z.ai平台/WaveSpeed API",
+    "预期MIT许可开源，Hugging Face/ModelScope可获取",
+    "2026年2月中旬API开放，Q1开放权重版本",
+    "定价远低于GPT-5与Claude"
+  ],
+  "content_quality": "very_high",
+  "has_full_text": true,
+  "has_code_examples": false,
+  "raw_output_length_chars": 30300,
+  "notes": "返回完整技术规格文档（参数量/架构/训练硬件/上下文长度/API接入方式/开源计划）。比WebSearch更详细：包含完整的模型规格参数表、训练时间线、开源许可计划。"
+}

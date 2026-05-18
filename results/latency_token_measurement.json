@@ -1,0 +1,77 @@
+{
+  "measurement_date": "2026-05-18T23:57:00",
+  "method": "标准化查询实测 + 已有结果文件统计",
+  "standard_query": "Python RuntimeError: can't start new thread",
+  "latency_results": {
+    "AnySearch_通用搜索": {
+      "latency_ms": 2142,
+      "output_chars": 8500,
+      "est_output_tokens": 4250,
+      "notes": "CLI调用含HTTP往返+结果解析"
+    },
+    "AnySearch_security垂直": {
+      "latency_ms": 2108,
+      "output_chars": 12000,
+      "est_output_tokens": 6000,
+      "notes": "垂直领域搜索延迟与通用搜索相当"
+    },
+    "AnySearch_academic垂直": {
+      "latency_ms": 1208,
+      "output_chars": 6000,
+      "est_output_tokens": 3000,
+      "notes": "学术搜索最快，结果结构化程度高"
+    },
+    "AnySearch_finance垂直": {
+      "latency_ms": 1774,
+      "output_chars": 4000,
+      "est_output_tokens": 2000,
+      "notes": "股票行情返回结构化JSON"
+    },
+    "Context7_resolve_step": {
+      "latency_ms": 635,
+      "output_chars": 500,
+      "est_output_tokens": 250,
+      "notes": "第一步：resolve-library-id，返回候选库列表"
+    },
+    "Context7_query_step": {
+      "latency_ms": 716,
+      "output_chars": 2400,
+      "est_output_tokens": 600,
+      "notes": "第二步：query-docs，返回代码片段"
+    },
+    "Context7_total": {
+      "latency_ms": 1351,
+      "output_chars": 2900,
+      "est_output_tokens": 850,
+      "notes": "两步总计，是最快的搜索工具"
+    },
+    "WebSearch": {
+      "latency_ms": null,
+      "estimated_latency_ms": 3000,
+      "output_chars": 2500,
+      "est_output_tokens": 1250,
+      "notes": "= web-search-prime API延迟(~2s) + Claude总结处理(~1s)，无法直接测量"
+    },
+    "web-search-prime": {
+      "latency_ms": null,
+      "estimated_latency_ms": 2000,
+      "output_chars": 3400,
+      "est_output_tokens": 1700,
+      "notes": "底层API无法直接HTTP调用（走Claude内部通道），延迟估算与AnySearch相当"
+    },
+    "web-reader": {
+      "latency_ms": null,
+      "estimated_latency_ms": 5000,
+      "output_chars": 4500,
+      "est_output_tokens": 2250,
+      "notes": "需先获取URL再提取全文，延迟较高"
+    }
+  },
+  "summary": {
+    "fastest": "Context7 (~1.3s, 两步调用)",
+    "slowest": "web-reader (估计 ~5s, 含页面渲染)",
+    "best_token_efficiency": "Context7 (~850 tokens, 纯代码)",
+    "highest_info_density": "AnySearch (~4250-6000 tokens, 完整全文)",
+    "best_balance": "WebSearch (~1250 tokens, 自带总结)"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "test_case": "TC02",
+  "category": "tech_doc",
+  "query": "Next.js App Router middleware 配置方法",
+  "tools": {
+    "WebSearch": {
+      "result_count": 8,
+      "sources": ["火山引擎", "CSDN", "Next.js中文文档", "博客园", "nextjs.net.cn", "Reddit", "知乎", "掘金"],
+      "key_info": ["middleware.ts文件位置", "matcher配置", "NextRequest/NextResponse使用", "模块化管理"],
+      "has_code_examples": false,
+      "raw_output_length_chars": 2200,
+      "notes": "返回多个中文博客和教程链接，有结构化总结但无直接代码示例"
+    },
+    "web-search-prime": {
+      "result_count": 10,
+      "sources": ["火山引擎", "掘金", "CSDN", "nextjs.net.cn", "Reddit", "知乎", "eastondev", "登链社区"],
+      "key_info": ["middleware.ts文件位置", "matcher配置", "路径匹配规则", "Edge Runtime限制"],
+      "has_code_examples": false,
+      "raw_output_length_chars": 3100,
+      "notes": "比WebSearch多2个结果，包含掘金和知乎等中文技术社区内容"
+    },
+    "Context7": {
+      "result_count": 5,
+      "sources": ["Next.js官方GitHub仓库 docs和examples"],
+      "key_info": ["matcher配置对象", "负向前瞻正则排除路径", "has/missing条件匹配", "locale:false设置"],
+      "has_code_examples": true,
+      "code_snippets_count": 5,
+      "raw_output_length_chars": 2400,
+      "notes": "纯官方文档代码片段，直接可用，零噪音。但缺少中文解释和上手教程"
+    }
+  }
+}

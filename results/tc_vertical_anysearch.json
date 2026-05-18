@@ -1,0 +1,54 @@
+{
+  "test_type": "vertical_domain_comparison",
+  "description": "AnySearch 垂直领域搜索 vs 通用搜索对比",
+  "results": {
+    "TC04_security_vertical": {
+      "query": "CVE-2024-9264",
+      "domain": "security",
+      "sub_domain": "scan",
+      "latency_ms": 1316,
+      "result_count": 10,
+      "sources": ["NVD (nist.gov)", "Tenable", "Wiz.io", "INCIBE-CERT", "securityvulnerability.io", "Vulnerability-Lookup", "SonicWall", "Grafana Labs官方"],
+      "key_findings": [
+        "CVSS v3.1: 9.9 Critical + CVSS v4.0: 9.4 (NVD双版本评分)",
+        "CWE-77 Command Injection + CWE-94 Code Injection",
+        "EPSS 92.3% 利用概率（极高）",
+        "修复版本详列：11.0.5+/11.1.6+/11.2.1+ security-01",
+        "SonicWall已发布IPS签名：4522 Grafana SQL Expressions LFI",
+        "完整利用链分析（含read_csv_auto() LFI PoC）"
+      ],
+      "vs_general_search": "垂直搜索返回NVD官方结构化数据+Wiz/SonicWall等专业安全分析，质量远高于通用搜索的博客摘要。延迟1316ms比通用搜索1959ms更快。但缺少中文社区内容。"
+    },
+    "academic_search": {
+      "query": "large language model agent architecture",
+      "domain": "academic",
+      "sub_domain": "search",
+      "latency_ms": 1208,
+      "result_count": 5,
+      "sources": ["PubMed (NCBI)", "Springer", "ArXiv", "ACM Digital Library"],
+      "key_findings": [
+        "LLM Agent在高血压管理中的临床应用（ChatGPT-4o Cascade框架）",
+        "LLM综述：预训练/后训练/利用策略/评估四维度",
+        "多Agent LLM药物-靶点互作预测（DruGagent）",
+        "LLM Agent系统临床决策基准测试"
+      ],
+      "vs_general_search": "学术垂直搜索返回带DOI/PMID的同行评审论文，含完整摘要、作者、机构信息。通用搜索无法获取此类学术内容。这是AnySearch独有的能力维度。"
+    },
+    "finance_cn_stock": {
+      "query": "600519",
+      "domain": "finance",
+      "sub_domain": "cn_stock",
+      "zone": "cn",
+      "latency_ms": 1774,
+      "result_count": 10,
+      "key_findings": [
+        "贵州茅台(600519.SH) 实时行情：收盘1323元（20260518）",
+        "PE(TTM): 20.03, PB: 6.12, 总市值: 1.66万亿",
+        "换手率0.40%, 股息率3.90%",
+        "近10个交易日完整OHLCV数据+技术指标"
+      ],
+      "vs_general_search": "返回结构化JSON行情数据，可直接用于量化分析。这是其他所有搜索工具都无法提供的独特能力（WebSearch/Context7均不支持股票数据查询）。"
+    }
+  },
+  "conclusion": "AnySearch垂直领域搜索提供了其他工具完全无法替代的能力：security域返回专业安全数据库结构化数据，academic域返回学术论文全文元数据，finance域返回实时行情JSON。这些是通用搜索引擎无法覆盖的深度结构化信息。"
+}

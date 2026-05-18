@@ -1,0 +1,19 @@
+{
+  "test_case": "TC06",
+  "category": "code_debug",
+  "query": "Python RuntimeError: can't start new thread 解决方案",
+  "tools": {
+    "web-search-prime": {
+      "result_count": 10,
+      "sources": ["CSDN", "阿里云开发者", "百度Comate", "博客园", "影刀社区", "掘金", "火山引擎"],
+      "key_info": [
+        "根因：系统线程数上限（Win7约1023个）",
+        "方案1：设置线程上限+Event+锁",
+        "方案2：Docker环境需升级到20.10.10+",
+        "方案3：pip安装时关闭进度条",
+        "方案4：join()管理线程生命周期"
+      ],
+      "notes": "中文技术社区覆盖全面，多个不同场景（普通Python、Docker、Selenium、Playwright）的解决方案"
+    }
+  }
+}

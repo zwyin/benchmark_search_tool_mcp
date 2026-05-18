@@ -1,0 +1,29 @@
+{
+  "test_case": "TC05",
+  "category": "industry_research",
+  "query": "2026年中国AI编程工具市场对比 Claude Code vs Cursor vs Copilot",
+  "tools": {
+    "WebSearch": {
+      "result_count": 9,
+      "sources": ["CSDN/DeepSeek社区", "知乎", "比邻EastonDev", "易源AI", "腾讯云", "Reddit", "Kanaries", "OSCHINA"],
+      "key_info": [
+        "三大工具定位分化：Claude Code=深度推理, Cursor=全能IDE, Copilot=生态支持",
+        "代码接受率：Copilot~40% vs Cursor~70%",
+        "59%开发者采用混合搭配策略",
+        "国产工具（Trae、通义灵码）加速企业级渗透"
+      ],
+      "notes": "返回高质量中文评测文章，含具体数据（接受率、定价、上下文窗口），Claude自动生成了对比表格"
+    },
+    "web-search-prime": {
+      "result_count": 10,
+      "sources": ["CSDN/DeepSeek社区", "51CTO", "比邻EastonDev", "aibook.ren", "什么值得买", "JB51", "watermelonwater", "AI编程社区CSDN"],
+      "key_info": [
+        "与WebSearch高度重叠但多1个结果",
+        "额外包含51CTO和独立博客观点",
+        "Cursor支持多模型并行'养蛊模式'",
+        "Windsurf主打高性价比路线"
+      ],
+      "notes": "原始JSON结果，需人工总结。信息密度与WebSearch相当"
+    }
+  }
+}

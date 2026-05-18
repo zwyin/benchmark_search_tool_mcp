@@ -1,0 +1,23 @@
+{
+  "test_case": "TC03",
+  "category": "github_opensource",
+  "query": "Claude Code plugin development tutorial 2026",
+  "tools": {
+    "WebSearch": {
+      "location": "default (cn)",
+      "result_count": 8,
+      "sources": ["NxCode", "知乎", "博客园", "什么值得买", "Bilibili", "腾讯云", "heyuan110"],
+      "key_info": ["MCP开发是Claude Code主要插件架构", "CLAUDE.md配置", "Hooks自动化", "VS Code/JetBrains集成"],
+      "has_code_examples": false,
+      "notes": "返回大量中文教程和指南，但都是入门/安装类，缺少plugin开发深度内容。Claude自己总结出'MCP是主要插件架构'"
+    },
+    "web-search-prime": {
+      "location": "us",
+      "result_count": 10,
+      "sources": ["code.claude.com (官方)", "DEV Community", "Arthur's Blog", "Medium/DataCamp", "YouTube", "Reddit", "GitHub", "alexop.dev", "LinkedIn"],
+      "key_info": ["官方plugin文档链接", "SKILL.md创建方式", "MCP与Skill选择", "测试和分享流程"],
+      "has_code_examples": false,
+      "notes": "返回官方文档+英文社区博客+GitHub仓库，信息更精准。包含code.claude.com/docs/en/plugins官方链接"
+    }
+  }
+}

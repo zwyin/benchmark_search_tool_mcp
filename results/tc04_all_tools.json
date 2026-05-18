@@ -1,0 +1,20 @@
+{
+  "test_case": "TC04",
+  "category": "vertical_domain",
+  "query": "CVE-2024-9264 漏洞详情和影响范围",
+  "tools": {
+    "WebSearch": {
+      "location": "default (cn)",
+      "result_count": 10,
+      "sources": ["上海科技大学", "安恒信息", "安全客", "阿里云漏洞库"],
+      "key_info": [
+        "Grafana SQL表达式DuckDB注入漏洞",
+        "CVSS 9.9 严重级别",
+        "影响Grafana 11.0.0-11.2.1 OSS和Enterprise",
+        "可导致命令注入/LFI/RCE"
+      ],
+      "has_code_examples": false,
+      "notes": "返回了完整的漏洞分析表格，含影响版本范围、漏洞原理、修复建议，结构化程度很高。中文安全社区内容丰富"
+    }
+  }
+}

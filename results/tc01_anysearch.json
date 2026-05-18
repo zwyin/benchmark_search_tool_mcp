@@ -1,0 +1,21 @@
+{
+  "test_case": "TC01",
+  "category": "domestic_news",
+  "tool": "AnySearch",
+  "query": "2026年5月中国AI大模型最新政策动态",
+  "result_count": 10,
+  "latency_ms": 2101,
+  "sources": ["新华社/altherswanke.com", "新浪财经", "新华网", "中央网信办", "财新网", "工信部/国家数据局"],
+  "key_info": [
+    "我国首部AI大模型系列国家标准正式实施",
+    "2026年3-4月新增72款生成式AI服务备案，累计868款",
+    "中央网信办'清朗·整治AI应用乱象'专项行动14类问题",
+    "三部门《智能体规范应用与创新发展实施意见》",
+    "工信部/国家数据局'模数共振'行动通知（20个重点行业）",
+    "生成合成内容标识办法及配套强制性标准"
+  ],
+  "content_quality": "very_high",
+  "has_full_text": true,
+  "raw_output_length_chars": 12000,
+  "notes": "返回完整文章内容而非摘要，信息密度远高于WebSearch/web-search-prime。覆盖政策面更广：国标实施、备案数据、清朗行动、智能体意见、模数共振行动。每条结果含完整全文和来源链接。"
+}

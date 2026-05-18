@@ -1,0 +1,20 @@
+{
+  "test_case": "TC08",
+  "category": "url_extraction",
+  "query": "https://docs.anthropic.com/en/docs/claude-code/overview",
+  "tools": {
+    "web-reader": {
+      "success": true,
+      "content_extracted": [
+        "安装：npm install -g @anthropic-ai/claude-code",
+        "前提：Node.js 18+, Claude.ai账户",
+        "核心功能：Build features, Debug, Navigate codebase, Automate tasks",
+        "特点：终端运行、直接编辑文件、Unix哲学可组合、企业级安全",
+        "MCP集成：Google Drive, Jira, Slack等"
+      ],
+      "content_quality": "high",
+      "raw_output_length_chars": 4500,
+      "notes": "返回完整页面内容+大量metadata（CSS/JS/favicon等），需要过滤噪音。核心文档内容准确完整"
+    }
+  }
+}

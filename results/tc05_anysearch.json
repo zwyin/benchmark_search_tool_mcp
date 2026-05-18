@@ -1,0 +1,24 @@
+{
+  "test_case": "TC05",
+  "category": "industry_research",
+  "tool": "AnySearch",
+  "query": "2026年中国AI编程工具市场对比 Claude Code vs Cursor vs Copilot",
+  "result_count": 10,
+  "latency_ms": 2285,
+  "sources": ["掘金", "CSDN/DeepSeek社区", "51CTO", "独立博客", "知乎"],
+  "key_info": [
+    "市场份额：Copilot 42%/2000万用户，Cursor ARR突破10亿美元/估值293亿",
+    "Claude Code年化营收超5亿美元，被评为'复杂任务最强工具'",
+    "Windsurf经历OpenAI→Google→Cognition 72小时并购大战",
+    "Devin从$500/月降至$20/月重新定义AI编程",
+    "最优组合：Copilot Pro($10) + Claude Code Pro($20) = $30/月性价比最高",
+    "Agent能力分化：Devin全自动 vs Claude Code协同Agent vs Cursor Composer中间路线",
+    "代码接受率：Copilot~40% vs Cursor~70%",
+    "使用场景推荐矩阵（日常补全/调试/架构设计分别推荐不同工具）"
+  ],
+  "content_quality": "very_high",
+  "has_full_text": true,
+  "has_comparison_table": true,
+  "raw_output_length_chars": 39300,
+  "notes": "信息量远超WebSearch/web-search-prime。返回完整文章而非摘要，含定价对比表格、Agent能力对比、使用场景推荐矩阵。额外包含Windsurf并购戏剧性事件和Devin价格战等市场动态。"
+}

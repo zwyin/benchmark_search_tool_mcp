@@ -1,0 +1,19 @@
+{
+  "test_case": "TC06",
+  "category": "code_debug",
+  "tool": "Context7",
+  "query": "Python RuntimeError: can't start new thread 解决方案",
+  "library_id": "/websites/python_zh-cn_3_14",
+  "result_count": 5,
+  "sources": ["Python官方文档 threading模块", "Python官方文档 concurrent.futures模块"],
+  "key_info": [
+    "ThreadPoolExecutor死锁场景（非目标问题）",
+    "start()方法只能调用一次，重复调用raise RuntimeError",
+    "单worker线程的Future.result()死锁",
+    "多线程互相等待Future结果的死锁"
+  ],
+  "has_code_examples": true,
+  "code_snippets_count": 3,
+  "raw_output_length_chars": 2800,
+  "notes": "Context7返回了Python官方threading文档，但聚焦在死锁和start()重复调用上，没有直接解决'can't start new thread'的系统线程数上限问题。说明Context7适合查API用法，不适合排查操作系统级别的运行时错误。代码调试场景WebSearch/web-search-prime更优。"
+}

@@ -1,0 +1,23 @@
+{
+  "test_case": "TC04",
+  "category": "vertical_domain",
+  "tool": "AnySearch",
+  "query": "CVE-2024-9264 漏洞详情和影响范围",
+  "result_count": 10,
+  "latency_ms": 1959,
+  "sources": ["GitHub Vulnerability-Wiki", "NVD (nist.gov)", "Tenable", "ogma.in", "腾讯云", "CN-SEC", "openEuler/Gitee", "SUSE", "上海音乐学院网信办"],
+  "key_info": [
+    "Grafana SQL表达式DuckDB注入漏洞，CVSS 9.9",
+    "影响Grafana 11.0.0-11.0.5/11.1.0-11.1.6/11.2.0-11.2.1 (OSS+Enterprise)",
+    "VIEWER及以上权限用户可利用，远程攻击",
+    "完整POC代码（含reverse shell利用链）",
+    "修复版本：11.0.5+/11.1.6+/11.2.1+ security-01",
+    "CWE-77命令注入 + CWE-94代码注入"
+  ],
+  "content_quality": "very_high",
+  "has_full_text": true,
+  "has_code_examples": true,
+  "code_snippets_count": 2,
+  "raw_output_length_chars": 15000,
+  "notes": "返回NVD官方详情+GitHub漏洞Wiki+完整POC利用代码+多平台修复公告。比WebSearch更深入：含完整漏洞复现步骤和exploit代码。中英文来源混合，覆盖更全面。唯一问题是最后一条SUSE结果返回了乱码。"
+}

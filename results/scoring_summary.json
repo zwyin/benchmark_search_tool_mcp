@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "generated": "2026-05-18T23:05:00",
+    "method": "LLM-as-Judge (GLM-5.1)",
+    "dimensions": ["relevance", "completeness", "accuracy", "usability_for_agent"],
+    "scale": "1-5",
+    "version": "2.0"
+  },
+  "ranking": [
+    {"rank": 1, "tool": "AnySearch", "overall_avg": 5.0, "tests": 4},
+    {"rank": 2, "tool": "WebSearch", "overall_avg": 4.46, "tests": 6},
+    {"rank": 3, "tool": "web-search-prime", "overall_avg": 4.38, "tests": 6},
+    {"rank": 4, "tool": "web-reader", "overall_avg": 4.25, "tests": 1},
+    {"rank": 5, "tool": "Context7", "overall_avg": 3.75, "tests": 2}
+  ],
+  "dimension_averages": {
+    "WebSearch": {"relevance": 4.5, "completeness": 4.5, "accuracy": 4.33, "usability_for_agent": 4.5},
+    "web-search-prime": {"relevance": 4.83, "completeness": 4.67, "accuracy": 4.33, "usability_for_agent": 3.67},
+    "AnySearch": {"relevance": 5.0, "completeness": 5.0, "accuracy": 5.0, "usability_for_agent": 5.0},
+    "Context7": {"relevance": 3.5, "completeness": 3.5, "accuracy": 4.5, "usability_for_agent": 3.5},
+    "web-reader": {"relevance": 5.0, "completeness": 4.0, "accuracy": 5.0, "usability_for_agent": 3.0}
+  },
+  "token_efficiency": {
+    "AnySearch": {"avg_chars": 24000, "est_output_tokens": 12000, "measured_latency_ms": 2142, "density": "HIGH"},
+    "web-reader": {"avg_chars": 4500, "est_output_tokens": 2250, "estimated_latency_ms": 5000, "density": "MED"},
+    "web-search-prime": {"avg_chars": 3400, "est_output_tokens": 1700, "estimated_latency_ms": 2000, "density": "MED"},
+    "Context7": {"avg_chars": 2600, "est_output_tokens": 650, "measured_latency_ms": 1351, "density": "HIGHEST(pure_code)"},
+    "WebSearch": {"avg_chars": 2500, "est_output_tokens": 1250, "estimated_latency_ms": 3000, "density": "HIGH(summary)"}
+  },
+  "latency_measurement": {
+    "method": "2026-05-18T23:57 实测（Context7/AnySearch）+ 估算（WebSearch/web-search-prime/web-reader）",
+    "results": {
+      "Context7_resolve": {"ms": 635, "measured": true},
+      "Context7_query": {"ms": 716, "measured": true},
+      "Context7_total": {"ms": 1351, "measured": true},
+      "AnySearch_general": {"ms": 2142, "measured": true},
+      "AnySearch_security": {"ms": 2108, "measured": true},
+      "AnySearch_academic": {"ms": 1208, "measured": true},
+      "AnySearch_finance": {"ms": 1774, "measured": true},
+      "WebSearch": {"ms": 3000, "measured": false, "note": "= web-search-prime ~2s + Claude总结 ~1s"},
+      "web-search-prime": {"ms": 2000, "measured": false, "note": "估算，同类型API"},
+      "web-reader": {"ms": 5000, "measured": false, "note": "估算，含页面渲染"}
+    }
+  },
+  "key_findings": [
+    "WebSearch and web-search-prime use the same engine; WebSearch adds Claude summarization",
+    "location parameter (cn/us) dramatically affects result quality for English technical content",
+    "Context7 is the absolute king for programming docs (zero noise, official code snippets)",
+    "Context7 is NOT suitable for code debugging (OS-level runtime errors)",
+    "AnySearch dominates in information density (avg 24K chars vs WebSearch 2.5K, 10x more)",
+    "AnySearch is the only tool with measurable latency data (~2s average)",
+    "web-reader works but has heavy metadata noise requiring filtering"
+  ],
+  "agent_recommendations": {
+    "write_code_api": {"primary": "Context7", "fallback": "WebSearch"},
+    "domestic_tech_news": {"primary": "AnySearch", "fallback": "WebSearch"},
+    "english_tech_search": {"primary": "web-search-prime (location=us)", "fallback": "AnySearch"},
+    "industry_research": {"primary": "AnySearch", "fallback": "WebSearch"},
+    "cve_security": {"primary": "AnySearch", "fallback": "WebSearch"},
+    "code_debug": {"primary": "WebSearch", "fallback": "web-search-prime"},
+    "url_extraction": {"primary": "web-reader", "fallback": "AnySearch extract"},
+    "quick_summary": {"primary": "WebSearch", "fallback": null}
+  }
+}

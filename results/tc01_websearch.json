@@ -1,0 +1,29 @@
+{
+  "test_case": "TC01",
+  "category": "domestic_news",
+  "tool": "WebSearch",
+  "query": "2026年5月中国AI大模型最新政策动态",
+  "timestamp": "2026-05-18T22:15:00",
+  "result_count": 10,
+  "results": [
+    {"title": "刚刚，重磅发布！AI，大利好！", "source": "21经济网", "date": "2026-05-11"},
+    {"title": "2026年5月12日AI观察：中国AI告别模型，落地掘金", "source": "小宇宙"},
+    {"title": "大模型周报(04.26-05.03)", "source": "亿欧"},
+    {"title": "2026年5月3日AI行业大事件", "source": "CSDN"},
+    {"title": "我国人工智能迈向系统性突破", "source": "数字中国建设峰会"},
+    {"title": "AI大模型时代下的管理决策 会议通知", "source": "scope.org.cn"},
+    {"title": "2026年中国AI发展趋势前瞻", "source": "新华网"},
+    {"title": "2.11倍领先！中国AI大模型周调用量再超美国", "source": "证券时报"},
+    {"title": "2026年中国AI发展趋势前瞻", "source": "央视新闻"},
+    {"title": "展望全球人工智能2026年演进新局", "source": "商务部"}
+  ],
+  "key_info_found": [
+    "广州发布AI产业2026年工作要点",
+    "工信部等十部门印发AI伦理审查办法",
+    "网信办启动清朗整治AI应用乱象专项行动",
+    "AI终端分级国标启动",
+    "中国AI大模型周调用量7.941万亿Token"
+  ],
+  "raw_output_length_chars": 2800,
+  "notes": "WebSearch 内部实际调用了 web-search-prime（从输出可见原始 JSON），结果经 Claude 总结后返回，包含结构化摘要和表格"
+}

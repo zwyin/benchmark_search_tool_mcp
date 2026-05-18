@@ -1,0 +1,28 @@
+{
+  "test_case": "TC07",
+  "category": "domestic_tech",
+  "query": "智谱GLM-5模型最新能力和API调用方法",
+  "tools": {
+    "WebSearch": {
+      "result_count": 8,
+      "sources": ["智谱AI官方文档", "阿里云文档", "七牛云", "CSDN", "腾讯云"],
+      "key_info": [
+        "GLM-5.1是最新旗舰，支持8小时长程自主工作",
+        "enable_thinking参数切换思考模式",
+        "API支持cURL/Python SDK/Java SDK",
+        "接入平台：智谱开放平台、阿里云百炼、七牛云、Dify"
+      ],
+      "notes": "返回官方文档链接+社区教程，Claude自动生成了总结表格。信息非常完整"
+    },
+    "web-search-prime": {
+      "result_count": 10,
+      "sources": ["智谱AI官方文档", "阿里云文档", "七牛云", "CSDN", "抖音"],
+      "key_info": [
+        "与WebSearch高度一致",
+        "额外包含抖音视频教程链接",
+        "包含HTTP API调用文档链接"
+      ],
+      "notes": "原始JSON，内容与WebSearch几乎相同（因为WebSearch底层就是调web-search-prime）"
+    }
+  }
+}
