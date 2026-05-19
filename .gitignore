@@ -3,3 +3,12 @@ __pycache__/
 .DS_Store
 results/tc*_rerun_*.json
 .claude/
+.env
+.env.*
+*.db
+*.sqlite
+*.sqlite3
+*.pem
+*.key
+*.p12
+*.pfx
