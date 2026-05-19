@@ -841,10 +841,10 @@ def generate_report(tool_scores, test_cases):
     lines.append("- **时效性衰减**：未测试同一查询在不同时间点的结果差异")
     lines.append("")
     lines.append("### 改进建议")
-    lines.append("1. 测试 AnySearch 垂直领域搜索（CVE/股票/学术等），对比通用搜索的差异")
-    lines.append("2. 在自动化框架中加入精确 token 计数和延迟计时")
-    lines.append("3. 增加更多英文技术搜索用例以验证 location 参数影响")
-    lines.append("4. 测试搜索结果的时效性衰减")
+    lines.append("1. 在自动化框架中加入精确 token 计数和延迟计时")
+    lines.append("2. 测试搜索结果的时效性衰减（同一查询在不同时间点的结果差异）")
+    lines.append("3. 测试更多 AnySearch 垂直领域（法律/医疗等，当前仅测金融和学术）")
+    lines.append("4. 对比 web-search-prime location=cn vs location=us 的系统性差异（当前仅在部分 TC 中验证）")
     lines.append("")
 
     # === Appendix: Raw Scores ===
