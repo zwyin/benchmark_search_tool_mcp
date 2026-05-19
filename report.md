@@ -1,6 +1,6 @@
 # 搜索工具对比评测报告
 
-**评测时间**: 2026-05-19 09:18
+**评测时间**: 2026-05-19 09:34
 **评测工具**: WebSearch, web-search-prime, AnySearch, Context7, web-reader
 **测试用例数**: 15
 **评分方法**: LLM-as-Judge (GLM-5.1)，基于预设评分标准人工校准
@@ -294,9 +294,9 @@
 ## 7. 测试覆盖与局限
 
 ### 已覆盖
-- 15 个测试用例，12 个类别（国内新闻/技术文档/开源社区/垂直领域/行业研究/代码调试/国内技术/URL提取/英文技术/多语言查询/实时数据/学术搜索/深度代码文档/国内生态/金融垂直）
-- 5 个工具：WebSearch、web-search-prime、Context7、web-reader、AnySearch
-- 4 个评分维度 × 多个测试用例
+- 15 个测试用例，15 个类别 × 5 个工具 = 52 个有效工具-TC 组合（69% 覆盖率，剩余为工具不适用场景）
+- 5 个工具：WebSearch（14 TCs）、web-search-prime（14 TCs）、AnySearch（14 TCs）、Context7（9 TCs）、web-reader（1 TC）
+- 4 个评分维度（relevance/completeness/accuracy/usability_for_agent）× 手动 + LLM-as-Judge 双重验证（47 条自动评分，avg deviation 0.46）
 - Token 效率粗估（基于 output 字符数）
 - AnySearch 延迟精确数据
 
