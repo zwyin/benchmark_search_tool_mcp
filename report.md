@@ -1,6 +1,6 @@
 # 搜索工具对比评测报告
 
-**评测时间**: 2026-05-19 07:04
+**评测时间**: 2026-05-19 08:29
 **评测工具**: WebSearch, web-search-prime, AnySearch, Context7, web-reader
 **测试用例数**: 15
 **评分方法**: LLM-as-Judge (GLM-5.1)，基于预设评分标准人工校准
@@ -70,7 +70,7 @@
 - TC10 Kubernetes HPA 测试：Context7 返回官方K8s YAML spec（精准但无中文），AnySearch 返回中文教程+官方文档混合
 - 两者组合使用效果最佳：Context7 提供精准API参考，AnySearch 提供中文教程和生态信息
 
-### 发现9: 学术搜索查询相关性需优化
+### 发现9: 学术搜索用 WebSearch，不要用 AnySearch 垂直
 - TC12 transformer attention survey：AnySearch 垂直学术搜索返回点云分析论文而非 attention 综述（3/3/4/3）
 - 同一查询 WebSearch 返回 arXiv/OpenReview/Semantic Scholar 精准匹配结果（5/5/5/5）
 - **建议**：学术搜索用 WebSearch，不要用 AnySearch 垂直学术
