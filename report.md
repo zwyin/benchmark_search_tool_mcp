@@ -1,6 +1,6 @@
 # 搜索工具对比评测报告
 
-**评测时间**: 2026-05-19 08:45
+**评测时间**: 2026-05-19 09:01
 **评测工具**: WebSearch, web-search-prime, AnySearch, Context7, web-reader
 **测试用例数**: 15
 **评分方法**: LLM-as-Judge (GLM-5.1)，基于预设评分标准人工校准

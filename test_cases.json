@@ -44,7 +44,9 @@
       "expected_content": "plugin 结构、skill 写法、MCP 集成方式",
       "applicable_tools": [
         "WebSearch",
-        "web-search-prime"
+        "web-search-prime",
+        "AnySearch",
+        "Context7"
       ]
     },
     {
@@ -163,7 +165,8 @@
       "applicable_tools": [
         "WebSearch",
         "web-search-prime",
-        "Context7"
+        "Context7",
+        "AnySearch"
       ]
     },
     {
@@ -187,7 +190,8 @@
       "applicable_tools": [
         "WebSearch",
         "web-search-prime",
-        "AnySearch"
+        "AnySearch",
+        "Context7"
       ]
     }
   ],
