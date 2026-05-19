@@ -30,6 +30,67 @@ python run_benchmark.py run
 python run_benchmark.py full
 ```
 
+## Reproducing This Setup
+
+To replicate this evaluation environment in your Claude Code setup:
+
+### 1. WebSearch (Built-in, No Installation)
+
+Available by default in Claude Code. No configuration needed.
+
+### 2. web-search-prime (Zhipu MCP)
+
+This is the official search MCP from [Zhipu AI (BigModel.cn)](https://open.bigmodel.cn). Add to your Claude Code MCP config:
+
+```json
+// ~/.claude.json → mcpServers
+"web-search-prime": {
+  "type": "http",
+  "url": "https://open.bigmodel.cn/api/mcp/web_search_prime/mcp",
+  "headers": {
+    "Authorization": "Bearer YOUR_ZHIPU_API_KEY"
+  }
+}
+```
+
+Get your API key at [open.bigmodel.cn](https://open.bigmodel.cn) (free tier available). This MCP is included with Zhipu Coding Plan subscriptions.
+
+### 3. Context7 (MCP Plugin)
+
+Install via Claude Code plugin marketplace or add manually:
+
+```json
+// ~/.claude.json → mcpServers
+"context7": {
+  "type": "http",
+  "url": "https://mcp.context7.com/mcp"
+}
+```
+
+No API key required. Free to use. Docs: [context7.com](https://context7.com)
+
+### 4. AnySearch (Skill Plugin)
+
+Install via the `/anysearch` skill. Requires an API key from [Z.ai](https://z.ai). Supports 23 vertical domains including finance, academic, and security.
+
+### 5. web-reader (MCP Plugin)
+
+Install via Claude Code plugin marketplace or add manually:
+
+```json
+// ~/.claude.json → mcpServers
+"web-reader": {
+  "type": "http",
+  "url": "https://mcp.web-reader.com/mcp"
+}
+```
+
+No API key required for basic usage.
+
+### Verifying Your Setup
+
+After installation, run `python run_benchmark.py run` to test that all tools are accessible.
+
 ## Project Structure
 
 ```
