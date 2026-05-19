@@ -688,6 +688,21 @@ def generate_report(tool_scores, test_cases):
         lines.append(avg_row)
         lines.append("")
 
+    # === Dimension Summary Table ===
+    lines.append("### 维度汇总")
+    lines.append("")
+    lines.append("| 工具 | 相关性 | 完整性 | 准确性 | Agent可用性 | 综合 |")
+    lines.append("|------|--------|--------|--------|------------|------|")
+    for tool, data in tool_scores.items():
+        dims = data["dimensions"]
+        r = avg(dims["relevance"])
+        c = avg(dims["completeness"])
+        a = avg(dims["accuracy"])
+        u = avg(dims["usability_for_agent"])
+        overall = round((r + c + a + u) / 4, 2)
+        lines.append(f"| {tool} | {r} | {c} | {a} | {u} | **{overall}** |")
+    lines.append("")
+
     # === Per-Tool Analysis ===
     lines.append("## 4. 工具详细分析")
     lines.append("")
