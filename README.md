@@ -1,73 +1,99 @@
-# 搜索工具对比评测框架
+# Search Tool Benchmark for Claude Code
 
-对比 Claude Code 环境下 5 个搜索工具在 15 个测试场景中的表现。
+Comparative evaluation of 5 search tools across 15 test scenarios in the Claude Code environment.
 
-## 评测工具
+[中文版](docs/README_CN.md) | [Tool Selection Guide](docs/TOOL_SELECTION_GUIDE.md) | [Changelog](docs/CHANGELOG.md)
 
-| 工具 | 类型 | 特点 |
-|------|------|------|
-| WebSearch | 内置 | 自带 Claude 结构化总结 |
-| web-search-prime | 智谱 MCP | 支持 location(cn/us) 参数 |
-| Context7 | MCP | 官方代码文档，零噪音 |
-| AnySearch | Skill | 23 个垂直领域，完整全文 |
-| web-reader | MCP | 已知 URL 内容提取 |
+## Evaluated Tools
 
-## 快速开始
+| Tool | Type | Key Feature |
+|------|------|-------------|
+| WebSearch | Built-in | Auto-summarized by Claude |
+| web-search-prime | MCP Plugin | `location` parameter (cn/us) |
+| Context7 | MCP Plugin | Official code docs, zero noise |
+| AnySearch | Skill Plugin | 23 vertical domains, full-text articles |
+| web-reader | MCP Plugin | Known URL content extraction |
+
+## Quick Start
 
 ```bash
-# 评分并生成报告（使用内置评分）
+# Score and generate report (using built-in scores)
 python scorer.py
 
-# LLM-as-Judge 自动评分（需要 ZHIPU_API_KEY）
+# LLM-as-Judge auto-scoring (requires ZHIPU_API_KEY)
 ZHIPU_API_KEY=xxx python scorer.py --llm-judge
 
-# 运行搜索测试（仅 AnySearch 和 Context7 可通过 CLI 调用）
+# Run search tests (only AnySearch and Context7 are callable via CLI)
 python run_benchmark.py run
 
-# 运行 + 评分
+# Run + score
 python run_benchmark.py full
 ```
 
-## 项目结构
+## Project Structure
 
 ```
 .
-├── test_cases.json       # 15 个测试用例定义
-├── scorer.py             # 评分脚本（手动 + LLM-as-Judge 双模式）
-├── run_benchmark.py      # CLI 一键运行
-├── report.md             # 评测报告（自动生成）
-├── CLAUDE.md             # 项目级搜索策略
-└── results/              # 测试结果 JSON
+├── test_cases.json          # 15 test case definitions
+├── scorer.py                # Scoring script (built-in + LLM-as-Judge dual mode)
+├── run_benchmark.py         # CLI runner
+├── search_selector.py       # Query→tool recommendation engine
+├── report.md                # Full evaluation report (auto-generated, Chinese)
+├── 搜索工具选择指南.md       # Tool selection guide (Chinese)
+├── docs/
+│   ├── TOOL_SELECTION_GUIDE.md  # Tool selection guide (English)
+│   └── CHANGELOG.md             # Iteration summary (English)
+├── CLAUDE.md                # Project-level search strategy
+└── results/                 # Test result JSON files
     ├── tc01_websearch.json
     ├── tc01_web-search-prime.json
     ├── ...
-    └── scoring_consistency.json  # LLM-Judge 一致性分析
+    └── scoring_consistency.json
 ```
 
-## 综合排名
+## Overall Rankings
 
-| 排名 | 工具 | 综合均分 | 参与测试数 |
-|------|------|----------|-----------|
+| Rank | Tool | Avg Score | Tests |
+|------|------|-----------|-------|
 | 1 | AnySearch | 4.70 | 14 |
 | 2 | WebSearch | 4.43 | 14 |
 | 3 | web-search-prime | 4.25 | 14 |
 | 4 | web-reader | 4.25 | 1 |
 | 5 | Context7 | 3.47 | 9 |
 
-## 三句话决策规则
+## Three-Line Decision Rule
 
-1. **写代码 → Context7；读网页 → web-reader**
-2. **要完整 → AnySearch；要快速 → WebSearch**
-3. **英文技术 → location=us；垂直领域 → AnySearch（金融/安全），学术用 WebSearch**
+1. **Writing code** → Context7; **reading pages** → web-reader
+2. **Need completeness** → AnySearch; **need speed** → WebSearch
+3. **English tech** → location=us; **Vertical domains** → AnySearch (finance/security); **Academic** → WebSearch
 
-## 关键发现
+## Key Findings
 
-- **WebSearch = web-search-prime**：同一引擎，9 个 TC 全面验证。WebSearch 高 0.18 分（Claude 自动总结加成）
-- **Context7 严格限定于编程 API 文档**：Claude Code 插件开发满分(5/5/5/5)，但 CVE 仅 1 分、国内技术 2 分、无法获取 release notes
-- **AnySearch 金融垂直是独有能力**：实时价格/分析师评级/EPS 超预期对比，其他工具无法提供
-- **学术搜索用 WebSearch**：AnySearch 垂直学术匹配精度差（TC12: 3/3/4/3 vs WebSearch 5/5/5/5）
-- **AnySearch token 成本约 10x WebSearch**：深度研究才值得
+- **WebSearch = web-search-prime**: Same engine confirmed across 9 test cases. WebSearch scores +0.18 higher (Claude auto-summary bonus).
+- **Context7 is strictly for programming API docs**: Claude Code plugin docs scored 5/5/5/5, but CVE search scored 1/1/2/1, domestic tech scored 2/1/3/2, and release notes scored 2/1/3/2.
+- **AnySearch finance vertical is a unique capability**: Real-time stock prices, analyst ratings, EPS surprise comparisons — no other tool provides structured financial data.
+- **Use WebSearch for academic search**: AnySearch academic vertical has poor query matching (TC12: 3/3/4/3 vs WebSearch 5/5/5/5).
+- **AnySearch token cost is ~10x WebSearch**: Only worthwhile for deep research.
 
-## 测试覆盖
+## Test Coverage
 
-15 个类别 × 5 个工具 × 4 维度评分 = 52 个有效组合（69% 覆盖率，剩余为工具不适用场景）。47 条 LLM-as-Judge 自动评分验证，avg deviation 0.46 分，排名方向完全一致。
+15 categories × 5 tools × 4-dimension scoring = 52 valid combinations (69% coverage; remaining are tool-not-applicable scenarios). 47 LLM-as-Judge auto-scores validated, avg deviation 0.46 points, ranking direction fully consistent.
+
+## Tool Recommendation Engine
+
+`search_selector.py` provides programmatic tool selection:
+
+```python
+from search_selector import recommend_tool, format_recommendation
+
+rec = recommend_tool("Next.js middleware configuration")
+print(format_recommendation(rec))
+# → Primary: Context7 (code docs, zero noise)
+# → Fallback: WebSearch
+```
+
+Supports 7 intent types (code, search, extract, research, finance, academic, security), automatic language detection (zh/en), and depth-aware recommendations (quick/deep).
+
+## License
+
+MIT
