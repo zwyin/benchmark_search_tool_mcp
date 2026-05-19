@@ -894,7 +894,7 @@ def generate_report(tool_scores, test_cases):
 
         per_tc = consistency.get("per_tc_comparison", {})
         if per_tc:
-            lines.append("| TC | LLM 均分 | 人工均分 | 偏差 | 备注 |")
+            lines.append("| TC | LLM 均分 | Agent 均分 | 偏差 | 备注 |")
             lines.append("|----|---------|---------|------|------|")
             for tc_id in sorted(per_tc.keys()):
                 d = per_tc[tc_id]

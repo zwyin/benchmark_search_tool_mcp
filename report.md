@@ -1,6 +1,6 @@
 # 搜索工具对比评测报告
 
-**评测时间**: 2026-05-19 14:53
+**评测时间**: 2026-05-19 19:37
 **评测工具**: WebSearch, web-search-prime, AnySearch, Context7, web-reader
 **测试用例数**: 15
 **评分方法**: Agent 逐条评分（基于预设评分标准）+ LLM-as-Judge (GLM-4-Flash) 交叉验证（avg deviation 0.46）
@@ -571,6 +571,6 @@
 
 - 47条LLM-Judge评分与52条Agent评分对比，avg deviation 0.46分，方向完全一致
 - Agent评分系统性偏高+0.38分，主要因为Agent评分考虑了Claude自动总结的usability加成
-- 15/15 TCs的偏差均在1.5分以内，排名方向完全一致——不会出现手动第1名变成LLM最后一名的情况
+- 15/15 TCs的偏差均在1.5分以内，排名方向完全一致——不会出现Agent第1名变成LLM最后一名的情况
 - LLM-Judge在评估原始JSON数据的usability时偏低（因为无法感知Claude自动总结的价值），但relevance/accuracy评分与Agent高度一致
 - 综合排名一致：AnySearch > WebSearch > web-search-prime > web-reader ≈ Context7
