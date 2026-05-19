@@ -1,6 +1,6 @@
 # 搜索工具对比评测报告
 
-**评测时间**: 2026-05-19 09:34
+**评测时间**: 2026-05-19 09:50
 **评测工具**: WebSearch, web-search-prime, AnySearch, Context7, web-reader
 **测试用例数**: 15
 **评分方法**: LLM-as-Judge (GLM-5.1)，基于预设评分标准人工校准
@@ -303,13 +303,13 @@
 ### 未覆盖
 - **精确 token 计数**：WebSearch/web-search-prime/Context7 的 input/output token 无法从运行时获取
 - **并发能力**：未测试多工具并发调用的稳定性和限流策略
-- **AnySearch 垂直领域搜索**：已测试金融(AAPL)和学术(transformer survey)垂直领域，其余垂直领域（如法律/医疗等）未测试
+- **AnySearch 垂直领域搜索**：已测试金融(AAPL)、学术(transformer survey)、安全(CVE-2024-9264)三个垂直领域，其余垂直领域（如法律/医疗等）未测试
 - **时效性衰减**：未测试同一查询在不同时间点的结果差异
 
 ### 改进建议
 1. 在自动化框架中加入精确 token 计数和延迟计时
 2. 测试搜索结果的时效性衰减（同一查询在不同时间点的结果差异）
-3. 测试更多 AnySearch 垂直领域（法律/医疗等，当前仅测金融和学术）
+3. 测试更多 AnySearch 垂直领域（法律/医疗等，当前已测金融/学术/安全三个）
 4. 对比 web-search-prime location=cn vs location=us 的系统性差异（当前仅在部分 TC 中验证）
 
 ## 附录: 原始评分明细
