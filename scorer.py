@@ -562,7 +562,7 @@ def generate_report(tool_scores, test_cases):
     lines.append(f"**评测时间**: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     lines.append(f"**评测工具**: {', '.join(tool_scores.keys())}")
     lines.append(f"**测试用例数**: {len(SCORERS)}")
-    lines.append(f"**评分方法**: LLM-as-Judge (GLM-5.1)，基于预设评分标准人工校准")
+    lines.append(f"**评分方法**: Agent 逐条评分（基于预设评分标准）+ LLM-as-Judge (GLM-4-Flash) 交叉验证（avg deviation 0.46）")
     lines.append("")
 
     # === Executive Summary ===
@@ -845,7 +845,7 @@ def generate_report(tool_scores, test_cases):
     lines.append("### 已覆盖")
     lines.append(f"- 15 个测试用例，15 个类别 × 5 个工具 = 52 个有效工具-TC 组合（69% 覆盖率，剩余为工具不适用场景）")
     lines.append("- 5 个工具：WebSearch（14 TCs）、web-search-prime（14 TCs）、AnySearch（14 TCs）、Context7（9 TCs）、web-reader（1 TC）")
-    lines.append("- 4 个评分维度（relevance/completeness/accuracy/usability_for_agent）× 手动 + LLM-as-Judge 双重验证（47 条自动评分，avg deviation 0.46）")
+    lines.append("- 4 个评分维度（relevance/completeness/accuracy/usability_for_agent）× Agent 评分 + LLM-as-Judge 交叉验证（47 条自动评分，avg deviation 0.46）")
     lines.append("- Token 效率粗估（基于 output 字符数）")
     lines.append("- AnySearch 延迟精确数据")
     lines.append("")
@@ -887,7 +887,7 @@ def generate_report(tool_scores, test_cases):
 
         lines.append("## 8. LLM-as-Judge 评分一致性验证")
         lines.append("")
-        lines.append(f"使用 {consistency.get('model', 'glm-4-flash')} 对所有结果文件进行自动评分，与人工评分对比验证。")
+        lines.append(f"使用 {consistency.get('model', 'glm-4-flash')} 对所有结果文件进行自动评分，与 Agent 评分交叉验证。")
         lines.append(f"**平均绝对偏差**: {consistency.get('avg_absolute_deviation', 'N/A')} 分")
         lines.append(f"**偏差方向**: {consistency.get('bias', 'N/A')}")
         lines.append("")

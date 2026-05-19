@@ -1,9 +1,9 @@
 # 搜索工具对比评测报告
 
-**评测时间**: 2026-05-19 09:50
+**评测时间**: 2026-05-19 14:53
 **评测工具**: WebSearch, web-search-prime, AnySearch, Context7, web-reader
 **测试用例数**: 15
-**评分方法**: LLM-as-Judge (GLM-5.1)，基于预设评分标准人工校准
+**评分方法**: Agent 逐条评分（基于预设评分标准）+ LLM-as-Judge (GLM-4-Flash) 交叉验证（avg deviation 0.46）
 
 ## 1. 执行摘要
 
@@ -296,7 +296,7 @@
 ### 已覆盖
 - 15 个测试用例，15 个类别 × 5 个工具 = 52 个有效工具-TC 组合（69% 覆盖率，剩余为工具不适用场景）
 - 5 个工具：WebSearch（14 TCs）、web-search-prime（14 TCs）、AnySearch（14 TCs）、Context7（9 TCs）、web-reader（1 TC）
-- 4 个评分维度（relevance/completeness/accuracy/usability_for_agent）× 手动 + LLM-as-Judge 双重验证（47 条自动评分，avg deviation 0.46）
+- 4 个评分维度（relevance/completeness/accuracy/usability_for_agent）× Agent 评分 + LLM-as-Judge 交叉验证（47 条自动评分，avg deviation 0.46）
 - Token 效率粗估（基于 output 字符数）
 - AnySearch 延迟精确数据
 
@@ -547,7 +547,7 @@
 
 ## 8. LLM-as-Judge 评分一致性验证
 
-使用 glm-4-flash 对所有结果文件进行自动评分，与人工评分对比验证。
+使用 glm-4-flash 对所有结果文件进行自动评分，与 Agent 评分交叉验证。
 **平均绝对偏差**: 0.46 分
 **偏差方向**: manual +0.38 (manual slightly higher due to Claude summary usability bonus)
 
