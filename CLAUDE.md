@@ -35,8 +35,12 @@
 
 ## 项目文件说明
 
-- `report.md` — 完整评测报告（8 章 + 附录 + LLM-Judge 一致性验证）
-- `results/` — 原始测试结果 JSON（47 个文件，52 个工具-TC 组合）
-- `scorer.py` — 评分脚本（手动 + LLM-as-Judge 双模式）
-- `test_cases.json` — 测试用例定义（15 个 TC，12 个类别）
+- `scorer.py` — 评分脚本（内置评分 + LLM-as-Judge 双模式）
+- `search_selector.py` — 查询→工具推荐引擎（7 种意图，语言检测，深度感知）
 - `run_benchmark.py` — 一键运行脚本
+- `test_cases.json` — 测试用例定义（15 个 TC，12 个类别）
+- `report.md` — 完整评测报告（8 章 + 附录 + LLM-Judge 一致性验证）
+- `搜索工具选择指南.md` — 人可读的工具选择指南（中文）
+- `CLAUDE.md` — 项目级搜索策略（AI 读取）
+- `results/` — 原始测试结果 JSON（47 个文件，52 个工具-TC 组合）
+- `docs/` — 英文文档（README_CN、TOOL_SELECTION_GUIDE、CHANGELOG）
