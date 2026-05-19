@@ -2,7 +2,7 @@
 
 Comparative evaluation of 5 search tools across 15 test scenarios in the Claude Code environment.
 
-[中文版](docs/README_CN.md) | [Tool Selection Guide](docs/TOOL_SELECTION_GUIDE.md) | [Changelog](docs/CHANGELOG.md)
+[中文版](docs/README_CN.md) | [Full Report](docs/REPORT.md) | [Tool Selection Guide](docs/TOOL_SELECTION_GUIDE.md) | [Changelog](docs/CHANGELOG.md)
 
 ## Evaluated Tools
 
