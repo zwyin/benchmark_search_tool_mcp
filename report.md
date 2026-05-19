@@ -551,7 +551,7 @@
 **平均绝对偏差**: 0.46 分
 **偏差方向**: manual +0.38 (manual slightly higher due to Claude summary usability bonus)
 
-| TC | LLM 均分 | 人工均分 | 偏差 | 备注 |
+| TC | LLM 均分 | Agent 均分 | 偏差 | 备注 |
 |----|---------|---------|------|------|
 | TC01 | 3.58 | 4.67 | +1.08 | LLM underrates web-search-prime raw JSON vs manual usability assessment |
 | TC02 | 4.25 | 4.38 | +0.12 | High agreement |
@@ -569,8 +569,8 @@
 | TC14 | 3.19 | 3.19 | +0.00 | Perfect agreement |
 | TC15 | 3.5 | 3.75 | +0.25 | Good agreement |
 
-- 47条LLM-Judge评分与52条人工评分对比，avg deviation 0.46分，方向完全一致
-- Manual评分系统性偏高+0.38分，主要因为手动评分考虑了Claude自动总结的usability加成
+- 47条LLM-Judge评分与52条Agent评分对比，avg deviation 0.46分，方向完全一致
+- Agent评分系统性偏高+0.38分，主要因为Agent评分考虑了Claude自动总结的usability加成
 - 15/15 TCs的偏差均在1.5分以内，排名方向完全一致——不会出现手动第1名变成LLM最后一名的情况
-- LLM-Judge在评估原始JSON数据的usability时偏低（因为无法感知Claude自动总结的价值），但relevance/accuracy评分与人工高度一致
+- LLM-Judge在评估原始JSON数据的usability时偏低（因为无法感知Claude自动总结的价值），但relevance/accuracy评分与Agent高度一致
 - 综合排名一致：AnySearch > WebSearch > web-search-prime > web-reader ≈ Context7
