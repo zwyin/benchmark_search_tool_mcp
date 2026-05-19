@@ -22,7 +22,7 @@ def load_test_cases():
 
 def load_result(tc_id):
     """Load all result files for a test case."""
-    files = sorted(RESULTS_DIR.glob(f"{tc_id}_*.json"))
+    files = sorted(RESULTS_DIR.glob(f"{tc_id.lower()}_*.json"))
     merged = {"test_case": tc_id, "tools": {}}
     for f in files:
         with open(f) as fh:
